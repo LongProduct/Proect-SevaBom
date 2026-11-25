@@ -1,0 +1,55 @@
+{
+  "at": "2026-11-25T03:21:16.786Z",
+  "browser": "Chrome via Playwright",
+  "results": [
+    {
+      "name": "Aggregation: all / filtered / selected correct numeric scope",
+      "status": "PASS"
+    },
+    {
+      "name": "Conditional formatting works and saves with complete View configuration",
+      "status": "PASS"
+    },
+    {
+      "name": "Editor changes data at Detail; Table remains read-only",
+      "status": "PASS"
+    },
+    {
+      "name": "Gallery record Detail stays read-only even for Admin/Editor",
+      "status": "PASS"
+    },
+    {
+      "name": "Gallery all 34 display components load at horizontal extremes",
+      "status": "PASS"
+    },
+    {
+      "name": "Multi-tags 0/1/2/10/13 and very long label in bounded overlay",
+      "status": "PASS"
+    },
+    {
+      "name": "Hidden column search scope never targets an invisible cell",
+      "status": "PASS"
+    },
+    {
+      "name": "Read-only cell context menu contains no mutation actions",
+      "status": "PASS"
+    },
+    {
+      "name": "Pinned columns exceeding viewport width scroll safely; restore when wide",
+      "status": "PASS"
+    },
+    {
+      "name": "Direct file:// opens offline with self-contained assets and interaction",
+      "status": "PASS"
+    },
+    {
+      "name": "Cell hover / focus / selected / read-only / empty / error / locked / loading",
+      "status": "PASS"
+    },
+    {
+      "name": "Zero JavaScript errors in additional edge cases",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-25T08:02:51.610Z",
+  "results": [
+    {
+      "name": "One factory, two independent DOM roots, schema, records and selection actions",
+      "status": "PASS"
+    },
+    {
+      "name": "Checkbox/range/copy/keyboard and independent filter/data state",
+      "status": "PASS"
+    },
+    {
+      "name": "Resize/sticky/header menu operates inside own root, not other instances",
+      "status": "PASS"
+    },
+    {
+      "name": "Pointer release outside isolated root ends range gesture without cross-instance selection",
+      "status": "PASS"
+    },
+    {
+      "name": "No JavaScript errors and legacy state unchanged",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

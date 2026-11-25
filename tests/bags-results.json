@@ -1,0 +1,70 @@
+{
+  "at": "2026-11-25T08:38:35.958Z",
+  "results": [
+    {
+      "name": "Default 60 authorized Bags, 56 verified fields, 36px read-only rows and original footer",
+      "status": "PASS"
+    },
+    {
+      "name": "Scope drafts do not update header/data/pagination before Apply; descendants disabled",
+      "status": "PASS"
+    },
+    {
+      "name": "Four-level cascading choices and stopping at Site / Workshop / Line / Workcenter",
+      "status": "PASS"
+    },
+    {
+      "name": "Reset edits only draft; X, outside and Escape cancel; dropdown search and permissions",
+      "status": "PASS"
+    },
+    {
+      "name": "Every business status has matching data, tabs scroll on one line",
+      "status": "PASS"
+    },
+    {
+      "name": "Advanced Order group / Order Type filters combine with scope, sort and group",
+      "status": "PASS"
+    },
+    {
+      "name": "Search navigates across pages, highlights and reports empty results without changing source",
+      "status": "PASS"
+    },
+    {
+      "name": "Cell and range copy, no native text selection, exact footer count and Escape",
+      "status": "PASS"
+    },
+    {
+      "name": "Checkbox/STT, indeterminate, Select All, Bag-only action bar and scope pruning",
+      "status": "PASS"
+    },
+    {
+      "name": "Resize, Auto-fit, hide/show, pin/sticky alignment and full-height drop feedback",
+      "status": "PASS"
+    },
+    {
+      "name": "Expanded truncated preview, readonly record action, loading and empty states",
+      "status": "PASS"
+    },
+    {
+      "name": "Excel export is a real XLSX archive with 60 demo Bag rows",
+      "status": "PASS"
+    },
+    {
+      "name": "Applied scope/table configuration/selection/scroll survive other pages and modules",
+      "status": "PASS"
+    },
+    {
+      "name": "Legacy table data/query unaffected and shortcuts isolated",
+      "status": "PASS"
+    },
+    {
+      "name": "Tablet: scope/dropdowns fit viewport, toolbar and header stay one line",
+      "status": "PASS"
+    },
+    {
+      "name": "No JavaScript errors",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

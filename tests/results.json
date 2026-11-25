@@ -1,0 +1,107 @@
+{
+  "at": "2026-11-25T03:22:35.270Z",
+  "browser": "Chrome via Playwright",
+  "results": [
+    {
+      "name": "Standalone: no network dependencies; all assets loaded",
+      "status": "PASS"
+    },
+    {
+      "name": "Header and every record row remain 36px",
+      "status": "PASS"
+    },
+    {
+      "name": "Resize updates colgroup/header/body; 72px minimum",
+      "status": "PASS"
+    },
+    {
+      "name": "Drag/drop reorder preserves field values",
+      "status": "PASS"
+    },
+    {
+      "name": "Pin middle column, scroll and resize: sticky offsets aligned",
+      "status": "PASS"
+    },
+    {
+      "name": "Freeze range and unfreeze all work",
+      "status": "PASS"
+    },
+    {
+      "name": "Hide/show columns and reset width",
+      "status": "PASS"
+    },
+    {
+      "name": "Cell range selection has no native text selection; copy TSV",
+      "status": "PASS"
+    },
+    {
+      "name": "Keyboard navigation, paste/delete and checkbox are read-only",
+      "status": "PASS"
+    },
+    {
+      "name": "Row selection / Shift range / page select-all / clear",
+      "status": "PASS"
+    },
+    {
+      "name": "Search across pages highlights and navigates without filtering data",
+      "status": "PASS"
+    },
+    {
+      "name": "Search by column and Enter / Shift+Enter",
+      "status": "PASS"
+    },
+    {
+      "name": "Multi-condition filter AND/OR with typed operators; clear",
+      "status": "PASS"
+    },
+    {
+      "name": "Multi-column sort priorities and reset",
+      "status": "PASS"
+    },
+    {
+      "name": "Two-level grouping / collapse / virtual Show All together",
+      "status": "PASS"
+    },
+    {
+      "name": "Gallery preserves selection, renders 34 distinct types and states",
+      "status": "PASS"
+    },
+    {
+      "name": "Multi-tag: 0/1/2/10+ tags, tooltip, overlay, Escape; no height change",
+      "status": "PASS"
+    },
+    {
+      "name": "Image and file previews work; checkbox does not mutate",
+      "status": "PASS"
+    },
+    {
+      "name": "Views: save complete config, rename, reload, reopen, delete",
+      "status": "PASS"
+    },
+    {
+      "name": "Viewer blocks Detail save and Planned Order, permits display config",
+      "status": "PASS"
+    },
+    {
+      "name": "Planned Order: reject invalid set; confirm valid rows; persistence",
+      "status": "PASS"
+    },
+    {
+      "name": "Detail validation and receipt creation preserve original primary action",
+      "status": "PASS"
+    },
+    {
+      "name": "Empty / Error / Loading recover without data loss",
+      "status": "PASS"
+    },
+    {
+      "name": "Desktop/tablet: one-line toolbar, no viewport overflow, 36px rows",
+      "status": "PASS"
+    },
+    {
+      "name": "No JavaScript errors through all interactions",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

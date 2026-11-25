@@ -1,0 +1,38 @@
+{
+  "at": "2026-11-25T08:36:21.071Z",
+  "results": [
+    {
+      "name": "Tabs hug content at wide desktop; page-colored remaining strip, 48px height, 8px top corners",
+      "status": "PASS"
+    },
+    {
+      "name": "Toolbar fills inner table width; search is fixed 320px; controls 32px high and aligned with 12px gap",
+      "status": "PASS"
+    },
+    {
+      "name": "Status quick filter uses Bag status, shows real count, combines with tabs and syncs advanced filter clear",
+      "status": "PASS"
+    },
+    {
+      "name": "Date control visible with explicit missing-source state; no fabricated date or plus action",
+      "status": "PASS"
+    },
+    {
+      "name": "Export remains at right edge; fixed search does not grow at larger widths",
+      "status": "PASS"
+    },
+    {
+      "name": "Tablet has independently scrollable tabs/tools; all controls accessible, no wrapping or page overflow",
+      "status": "PASS"
+    },
+    {
+      "name": "Scope/tab/toolbar filter state persists across module switch; legacy toolbar remains untouched",
+      "status": "PASS"
+    },
+    {
+      "name": "No JavaScript errors",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

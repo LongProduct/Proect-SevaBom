@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-25T08:15:35.597Z",
+  "results": [
+    {
+      "name": "Checkbox/STT, Shift selection and header three states",
+      "status": "PASS"
+    },
+    {
+      "name": "Planned Order validation, confirmation and resulting record detail",
+      "status": "PASS"
+    },
+    {
+      "name": "Read-only table and frontend role simulation retained",
+      "status": "PASS"
+    },
+    {
+      "name": "Column drag: blue source, singleton full-height line, deferred reorder, cancellation",
+      "status": "PASS"
+    },
+    {
+      "name": "Empty / Loading / Error presentation and manual refresh retained",
+      "status": "PASS"
+    },
+    {
+      "name": "No JavaScript errors in business regression",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,46 @@
+{
+  "at": "2026-11-25T08:44:54.223Z",
+  "results": [
+    {
+      "name": "Default primary All hides secondary without reserved height; 60 Bag IDs remain",
+      "status": "PASS"
+    },
+    {
+      "name": "Independent primary configurations: 3 waiting tabs, 11 running tabs, and all 12 valid combinations",
+      "status": "PASS"
+    },
+    {
+      "name": "Switching primary resets secondary to All; clicking current primary preserves current substatus",
+      "status": "PASS"
+    },
+    {
+      "name": "Every other primary hides secondary, clears its state, and has demo data",
+      "status": "PASS"
+    },
+    {
+      "name": "Primary/secondary reset pagination and prune checkbox selection outside new dataset",
+      "status": "PASS"
+    },
+    {
+      "name": "Production Scope applies before primary/secondary; draft does not change result",
+      "status": "PASS"
+    },
+    {
+      "name": "Advanced filter, search, sorting/grouping combine without clearing tab state",
+      "status": "PASS"
+    },
+    {
+      "name": "Nested tab state, table configuration and single DOM instance survive module roundtrip",
+      "status": "PASS"
+    },
+    {
+      "name": "Secondary row has symmetric padding and 56px height with 32px controls; keyboard and tablet horizontal scrolling",
+      "status": "PASS"
+    },
+    {
+      "name": "No JavaScript errors",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

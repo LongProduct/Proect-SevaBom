@@ -1,0 +1,71 @@
+{
+  "at": "2026-11-25T08:15:37.669Z",
+  "browser": "Chrome via Playwright",
+  "results": [
+    {
+      "name": "Header contains no data-type icons; dropdown is hidden by default",
+      "status": "PASS"
+    },
+    {
+      "name": "Only hovered header reveals its dropdown; title geometry stays unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "Header menu remains keyboard-accessible, including Pin and Sort",
+      "status": "PASS"
+    },
+    {
+      "name": "Single cell uses exact interaction blue; hover is distinct",
+      "status": "PASS"
+    },
+    {
+      "name": "Horizontal and vertical drag: blue range, active anchor, no text selection/preview",
+      "status": "PASS"
+    },
+    {
+      "name": "Cmd/Ctrl+C copies entire TSV range without an extra copied border",
+      "status": "PASS"
+    },
+    {
+      "name": "Copy preserves selection; new focus and Escape work normally",
+      "status": "PASS"
+    },
+    {
+      "name": "Click on a fitting cell does not open expanded preview",
+      "status": "PASS"
+    },
+    {
+      "name": "Click truncated text expands inline, wraps full content and preserves geometry",
+      "status": "PASS"
+    },
+    {
+      "name": "Esc, outside click and selecting another cell close expanded preview",
+      "status": "PASS"
+    },
+    {
+      "name": "Copy from truncated cells includes full original values, never ellipsis",
+      "status": "PASS"
+    },
+    {
+      "name": "Double-click and Enter retain Record Detail behavior on truncated cells",
+      "status": "PASS"
+    },
+    {
+      "name": "Dragging from button-based cells selects range without opening actions",
+      "status": "PASS"
+    },
+    {
+      "name": "Expanded preview fits table and viewport at right/bottom edges on tablet",
+      "status": "PASS"
+    },
+    {
+      "name": "Scroll/resize closes stale expanded preview; pinned cells still align",
+      "status": "PASS"
+    },
+    {
+      "name": "All rows/header remain 36px; no inline editor or JavaScript errors",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,39 @@
+/* Bag-list only: the global shell and shared grid styles are not overridden. */
+.bag-scope-trigger{height:32px;min-width:40px;max-width:271px;flex:0 1 271px;margin-left:4px;padding:4px 10px;gap:8px;border:1px solid #dbdcdc;border-radius:6px;background:white;font-size:13px;color:#303434}
+.bag-scope-trigger>span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;text-align:left}
+.bag-scope-trigger>.ico{flex:none}
+.bag-scope-popover{position:fixed;z-index:1050;width:min(420px,calc(100vw - 16px));padding:16px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;box-shadow:0 6px 24px #193e3014;overflow-y:auto;animation:bag-scope-enter 180ms ease-out;font-size:13px;color:#303434}
+.bag-scope-heading{display:flex;align-items:flex-start;gap:12px}.bag-scope-heading>div{flex:1}.bag-scope-heading strong{font-size:14px;font-weight:600;line-height:22px}.bag-scope-heading p{font-size:12px;line-height:18px;color:#737676;margin:6px 0 0}.bag-scope-heading>button{padding:2px;width:24px;height:24px;flex:none}
+.bag-scope-hierarchy{display:flex;align-items:center;gap:8px;margin:16px 0;color:#4c4d4d;font-size:12px;line-height:20px}.bag-scope-hierarchy span{color:#9b9c9c}
+.bag-scope-fields{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.bag-scope-select{width:100%;height:34px;padding:6px 10px;border:1px solid #dbdcdc;border-radius:5px;background:#fff;gap:8px;font-size:13px;text-align:left;justify-content:space-between}
+.bag-scope-select>span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bag-scope-select:hover:not(:disabled){border-color:#9b9c9c;background:#fafcfc}.bag-scope-select:focus-visible{outline:2px solid #316bff;outline-offset:1px}.bag-scope-select:disabled{background:#f5f6f7;color:#737676;cursor:not-allowed;opacity:1}
+.bag-scope-helper{font-size:12px;line-height:18px;color:#737676;margin:0 0 16px}
+.bag-scope-footer{display:flex;justify-content:flex-end;gap:8px;border-top:1px solid #e5e7eb;padding-top:12px}.bag-scope-footer button{height:32px;padding:6px 12px;font-size:13px}
+.bag-scope-options{position:fixed;z-index:1060;padding:6px;border:1px solid #e5e7eb;border-radius:6px;background:white;box-shadow:0 6px 24px #193e3014;font-size:13px;max-height:min(300px,calc(100dvh - 16px));overflow:auto}
+.bag-scope-options [role=listbox]{max-height:220px;overflow-y:auto;margin-top:6px}.bag-scope-options [role=option]{display:block;width:100%;padding:7px 8px;text-align:left;font-size:13px;white-space:normal;border-radius:4px}.bag-scope-options [role=option]:hover{background:#f3f7f6}.bag-scope-options [aria-selected=true]{background:#e6eeed;color:#07554b}.bag-scope-options p{font-size:12px;color:#737676;padding:8px;margin:0}
+.bag-page{display:flex;flex-direction:column;min-height:0;height:100%}.bag-page>h1{flex:none}.bag-page>.bag-panel{flex:1;min-height:0;display:flex;flex-direction:column;background:#fff}.bag-page .bag-tabs{display:flex;max-width:100%;overflow:auto;flex-shrink:0;scrollbar-width:thin;border-radius:8px 8px 0 0;height:48px;min-height:48px}.bag-page .bag-tabs>.tab{flex:none}
+.bag-page .bag-grid-slot{flex:1;min-height:0;display:flex;flex-direction:column}
+@keyframes bag-scope-enter{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.bag-scope-popover{animation:none}}
+/* Scope participates in the existing header row without wrapping its title. */
+.app-header:has(>.bag-scope-trigger:not([hidden]))>strong{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:1100px){.bag-scope-trigger{flex-basis:220px;max-width:220px}}
+@media(max-width:850px){.bag-scope-trigger{flex-basis:160px;max-width:160px}}
+
+/* Reference: hug-width white status surface on the page background. */
+.bag-page>.bag-panel{background:transparent}
+.bag-page .bag-tabs{width:max-content;max-width:100%;align-self:flex-start;flex:0 0 48px;gap:0;padding:0 24px 0 12px;background:#fff;border-radius:8px 8px 0 0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
+.bag-page .bag-tabs::-webkit-scrollbar{display:none}
+.bag-page .bag-tabs>.tab{height:48px;min-height:48px;padding:12px 16px;font:500 14px/20px Inter,Arial,sans-serif;flex:0 0 auto}
+.bag-page .bag-grid-slot{background:#fff}
+
+/* Page-owned second level: 32px buttons, symmetric 12px insets, 10px gap. */
+.bag-page .bag-secondary-tabs{width:100%;max-width:100%;align-self:stretch;box-shadow:inset 0 -1px 0 var(--border,#E5E7EB);display:flex;flex:0 0 56px;height:56px;min-height:56px;align-items:center;gap:10px;padding:12px;background:#fff;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
+.bag-page .bag-secondary-tabs[hidden]{display:none}
+.bag-page .bag-secondary-tabs::-webkit-scrollbar{display:none}
+.bag-page .bag-secondary-tabs>button{flex:0 0 auto;height:32px;box-sizing:border-box;padding:6px 12px;border:1px solid transparent;border-radius:6px;background:#fff;color:#4c4d4d;font:500 14px/18px Inter,Arial,sans-serif}
+.bag-page .bag-secondary-tabs>button:hover{background:#f3f7f6}
+.bag-page .bag-secondary-tabs>button.active{background:#f3f7f6;border-color:#053c35;color:#053c35}
+.bag-page .bag-secondary-tabs>button:focus-visible{outline:2px solid #316bff;outline-offset:-2px}

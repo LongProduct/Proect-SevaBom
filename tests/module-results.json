@@ -1,0 +1,67 @@
+{
+  "at": "2026-11-25T08:16:56.909Z",
+  "browser": "Chrome / Playwright",
+  "results": [
+    {
+      "name": "Original page visual geometry and DOM preserved",
+      "status": "PASS"
+    },
+    {
+      "name": "Launcher: 7 groups, 4 columns, exact local assets, real count and active app",
+      "status": "PASS"
+    },
+    {
+      "name": "Launcher close methods and guide do not clear existing grid selection/search",
+      "status": "PASS"
+    },
+    {
+      "name": "Independent pending modules: header/sidebar/content, no grid business data",
+      "status": "PASS"
+    },
+    {
+      "name": "Search keyword, hit position, pagination and scroll survive module switch",
+      "status": "PASS"
+    },
+    {
+      "name": "Filter, multi-sort, group/collapse config survive without mutating records",
+      "status": "PASS"
+    },
+    {
+      "name": "Widths, pins, hidden columns, reorder, selection toolbar and both scroll axes persist",
+      "status": "PASS"
+    },
+    {
+      "name": "Range selection, full TSV copy and footer count survive roundtrip",
+      "status": "PASS"
+    },
+    {
+      "name": "Back / Forward and direct hash routes switch without reloading",
+      "status": "PASS"
+    },
+    {
+      "name": "Record Detail legacy routing, module return, Back and action bar preserved",
+      "status": "PASS"
+    },
+    {
+      "name": "Show All virtualization and module isolation after viewport changes",
+      "status": "PASS"
+    },
+    {
+      "name": "Extend registry without editing current module; catalog count updates",
+      "status": "PASS"
+    },
+    {
+      "name": "Tablet launcher fits viewport and uses 4 columns with scroll",
+      "status": "PASS"
+    },
+    {
+      "name": "Standalone HTML works offline from file:// with embedded launcher assets",
+      "status": "PASS"
+    },
+    {
+      "name": "No JavaScript errors",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

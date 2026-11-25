@@ -1,0 +1,38 @@
+{
+  "at": "2026-11-25T07:57:08.474Z",
+  "results": [
+    {
+      "name": "Launcher manufacturing group, embedded Figma logo, default bags route",
+      "status": "PASS"
+    },
+    {
+      "name": "12 exact ordered top-level menus and 6 configuration children",
+      "status": "PASS"
+    },
+    {
+      "name": "Every page has independent route/container, active state and no fake data",
+      "status": "PASS"
+    },
+    {
+      "name": "Configuration/reports expand and collapse; collapse sidebar and restore independently",
+      "status": "PASS"
+    },
+    {
+      "name": "Current module data, table identity, query, selection, and scroll fully preserved",
+      "status": "PASS"
+    },
+    {
+      "name": "Back/Forward, direct child route, page persistence and invalid-route fallback",
+      "status": "PASS"
+    },
+    {
+      "name": "Shared-table preparation uses separate contexts, existing engine unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "Tablet/sidebar scroll/footer, Figma header geometry and zero JS errors",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

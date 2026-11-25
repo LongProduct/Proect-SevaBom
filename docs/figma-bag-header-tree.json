@@ -1,0 +1,1118 @@
+[
+  {
+    "id": "I30175:31908;30175:29448",
+    "name": "Table/Sized/Cell/Header",
+    "type": "INSTANCE",
+    "width": 48,
+    "height": 60,
+    "text": [],
+    "children": [
+      {
+        "id": "I30175:31908;30175:29448;29978:146",
+        "name": "_Checkbox/Base",
+        "type": "INSTANCE",
+        "width": 16,
+        "height": 16,
+        "text": [],
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": "I30175:31908;30216:49534",
+    "name": "Table/Sized/Cell/Header",
+    "type": "INSTANCE",
+    "width": 150,
+    "height": 60,
+    "text": [
+      "Mã bag"
+    ],
+    "children": [
+      {
+        "id": "I30175:31908;30216:49534;29978:109",
+        "name": "Cell header",
+        "type": "TEXT",
+        "width": 118,
+        "height": 20,
+        "text": [
+          "Mã bag"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "I30175:31908;30203:34832",
+    "name": "Table/Sized/Cell/Header",
+    "type": "INSTANCE",
+    "width": 108,
+    "height": 60,
+    "text": [
+      "Ưu tiên"
+    ],
+    "children": [
+      {
+        "id": "I30175:31908;30203:34832;30203:34825",
+        "name": "Cell header",
+        "type": "TEXT",
+        "width": 76,
+        "height": 20,
+        "text": [
+          "Ưu tiên"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "I30175:31908;30175:31965",
+    "name": "Table Group",
+    "type": "FRAME",
+    "width": 823,
+    "height": 60,
+    "text": [
+      "Trạng thái",
+      "TT hiện tại",
+      "TT thực thi",
+      "Module điều phối",
+      "Công đoạn hiện tại",
+      "Người được điều phối",
+      "Người giữ bag"
+    ],
+    "children": [
+      {
+        "id": "I30175:31908;30175:29449",
+        "name": "Table/Sized/Cell/Header",
+        "type": "INSTANCE",
+        "width": 823,
+        "height": 30,
+        "text": [
+          "Trạng thái"
+        ],
+        "children": [
+          {
+            "id": "I30175:31908;30175:29449;29978:123",
+            "name": "Cell header",
+            "type": "TEXT",
+            "width": 791,
+            "height": 20,
+            "text": [
+              "Trạng thái"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "I30175:31908;30175:31999",
+        "name": "Frame 1948756207",
+        "type": "FRAME",
+        "width": 823,
+        "height": 30,
+        "text": [
+          "TT hiện tại",
+          "TT thực thi",
+          "Module điều phối",
+          "Công đoạn hiện tại",
+          "Người được điều phối",
+          "Người giữ bag"
+        ],
+        "children": [
+          {
+            "id": "I30175:31908;30175:32011",
+            "name": "Table/Sized/Cell/Header",
+            "type": "INSTANCE",
+            "width": 104,
+            "height": 30,
+            "text": [
+              "TT hiện tại"
+            ]
+          },
+          {
+            "id": "I30175:31908;30203:34902",
+            "name": "Table/Sized/Cell/Header",
+            "type": "INSTANCE",
+            "width": 107,
+            "height": 30,
+            "text": [
+              "TT thực thi"
+            ]
+          },
+          {
+            "id": "I30175:31908;30175:31988",
+            "name": "Table/Sized/Cell/Header",
+            "type": "INSTANCE",
+            "width": 149,
+            "height": 30,
+            "text": [
+              "Module điều phối"
+            ]
+          },
+          {
+            "id": "I30175:31908;30203:34913",
+            "name": "Table/Sized/Cell/Header",
+            "type": "INSTANCE",
+            "width": 159,
+            "height": 30,
+            "text": [
+              "Công đoạn hiện tại"
+            ]
+          },
+          {
+            "id": "I30175:31908;30203:34924",
+            "name": "Table/Sized/Cell/Header",
+            "type": "INSTANCE",
+            "width": 177,
+            "height": 30,
+            "text": [
+              "Người được điều phối"
+            ]
+          },
+          {
+            "id": "I30175:31908;30203:34935",
+            "name": "Table/Sized/Cell/Header",
+            "type": "INSTANCE",
+            "width": 127,
+            "height": 30,
+            "text": [
+              "Người giữ bag"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "I30175:31908;30203:35041",
+    "name": "Table Group 2",
+    "type": "FRAME",
+    "width": 1145,
+    "height": 60,
+    "text": [
+      "Đơn hàng / sản phẩm",
+      "Order group",
+      "Order Type",
+      "Unit",
+      "Line Wax / Line SX",
+      "Mã Order",
+      "Mã KH",
+      "Mã MPS",
+      "Mã Casting Order",
+      "Mã sản phẩm",
+      "Mã thiết kế"
+    ],
+    "children": [
+      {
+        "id": "I30175:31908;30203:35042",
+        "name": "Table/Sized/Cell/Header",
+        "type": "INSTANCE",
+        "width": 1145,
+        "height": 30,
+        "text": [
+          "Đơn hàng / sản phẩm"
+        ],
+        "children": [
+          {
+            "id": "I30175:31908;30203:35042;29978:123",
+            "name": "Cell header",
+            "type": "TEXT",
+            "width": 1113,
+            "height": 20,
+            "text": [
+              "Đơn hàng / sản phẩm"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "I30175:31908;30203:35043",
+        "name": "Frame 1948756207",
+        "type": "FRAME",
+        "width": 1145,
+        "height": 30,
+        "text": [
+          "Order group",
+          "Order Type",
+          "Unit",
+          "Line Wax / Line SX",
+          "Mã Order",
+          "Mã KH",
+          "Mã MPS",
+          "Mã Casting Order",
+          "Mã sản phẩm",
+          "Mã thiết kế"
+        ],
+        "children": [
+          {
+            "id": "I30175:31908;30208:18898",
+            "name": "Order group",
+            "type": "INSTANCE",
+            "width": 118,
+            "height": 30,
+            "text": [
+              "Order group"
+            ]
+          },
+          {
+            "id": "I30175:31908;30203:35044",
+            "name": "Table/Sized/Cell/Header",
+            "type": "INSTANCE",
+            "width": 108,
+            "height": 30,
+            "text": [
+              "Order Type"
+            ]
+          },
+          {
+            "id": "I30175:31908;30203:35045",
+            "name": "Table/Sized/Cell/Header",
+            "type": "INSTANCE",
+            "width": 95,
+            "height": 30,
+            "text": [
+              "Unit"
+            ]
+          },
+          {
+            "id": "I30175:31908;30203:35046",
+            "name": "Table/Sized/Cell/Header",
+            "type": "INSTANCE",
+            "width": 157,
+            "height": 30,
+            "text": [
+              "Line Wax / Line SX"
+            ]
+          },
+          {
+            "id": "I30175:31908;30203:35047",
+            "name": "Table/Sized/Cell/Header",
+            "type": "INSTANCE",
+            "width": 96,
+            "height": 30,
+            "text": [
+              "Mã Order"
+            ]
+          },
+          {
+            "id": "I30175:31908;30203:35048",
+            "name": "Table/Sized/Cell/Header",
+            "type": "INSTANCE",
+            "width": 95,
+            "height": 30,
+            "text": [
+              "Mã KH"
+            ]
+          },
+          {
+            "id": "I30175:31908;30203:35049",
+            "name": "Table/Sized/Cell/Header",
+            "type": "INSTANCE",
+            "width": 95,
+            "height": 30,
+            "text": [
+              "Mã MPS"
+            ]
+          },
+          {
+            "id": "I30175:31908;30203:35116",
+            "name": "Table/Sized/Cell/Header",
+            "type": "INSTANCE",
+            "width": 151,
+            "height": 30,
+            "text": [
+              "Mã Casting Order"
+            ]
+          },
+          {
+            "id": "I30175:31908;30203:35127",
+            "name": "Table/Sized/Cell/Header",
+            "type": "INSTANCE",
+            "width": 122,
+            "height": 30,
+            "text": [
+              "Mã sản phẩm"
+            ]
+          },
+          {
+            "id": "I30175:31908;30203:35138",
+            "name": "Table/Sized/Cell/Header",
+            "type": "INSTANCE",
+            "width": 108,
+            "height": 30,
+            "text": [
+              "Mã thiết kế"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "I30175:31908;30203:35150",
+    "name": "Table Group 3",
+    "type": "FRAME",
+    "width": 205,
+    "height": 60,
+    "text": [
+      "Số lượng",
+      "SL dự kiến",
+      "SL thực tế"
+    ],
+    "children": [
+      {
+        "id": "I30175:31908;30203:35151",
+        "name": "Table/Sized/Cell/Header",
+        "type": "INSTANCE",
+        "width": 205,
+        "height": 30,
+        "text": [
+          "Số lượng"
+        ],
+        "children": [
+          {
+            "id": "I30175:31908;30203:35151;29978:123",
+            "name": "Cell header",
+            "type": "TEXT",
+            "width": 173,
+            "height": 20,
+            "text": [
+              "Số lượng"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "I30175:31908;30203:35152",
+        "name": "Frame 1948756207",
+        "type": "FRAME",
+        "width": 205,
+        "height": 30,
+        "text": [
+          "SL dự kiến",
+          "SL thực tế"
+        ],
+        "children": [
+          {
+            "id": "I30175:31908;30203:35153",
+            "name": "Table/Sized/Cell/Header",
+            "type": "INSTANCE",
+            "width": 103,
+            "height": 30,
+            "text": [
+              "SL dự kiến"
+            ]
+          },
+          {
+            "id": "I30175:31908;30203:35154",
+            "name": "Table/Sized/Cell/Header",
+            "type": "INSTANCE",
+            "width": 102,
+            "height": 30,
+            "text": [
+              "SL thực tế"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "I30175:31908;30203:35271",
+    "name": "Table Group 4",
+    "type": "FRAME",
+    "width": 285,
+    "height": 60,
+    "text": [
+      "Trọng lượng",
+      "TL IN",
+      "TL metal",
+      "TL đá"
+    ],
+    "children": [
+      {
+        "id": "I30175:31908;30203:35272",
+        "name": "Table/Sized/Cell/Header",
+        "type": "INSTANCE",
+        "width": 285,
+        "height": 30,
+        "text": [
+          "Trọng lượng"
+        ],
+        "children": [
+          {
+            "id": "I30175:31908;30203:35272;29978:123",
+            "name": "Cell header",
+            "type": "TEXT",
+            "width": 253,
+            "height": 20,
+            "text": [
+              "Trọng lượng"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "I30175:31908;30203:35273",
+        "name": "Frame 1948756207",
+        "type": "FRAME",
+        "width": 285,
+        "height": 30,
+        "text": [
+          "TL IN",
+          "TL metal",
+          "TL đá"
+        ],
+        "children": [
+          {
+            "id": "I30175:31908;30203:35274",
+            "name": "Table/Sized/Cell/Header",
+            "type": "INSTANCE",
+            "width": 95,
+            "height": 30,
+            "text": [
+              "TL IN"
+            ]
+          },
+          {
+            "id": "I30175:31908;30203:35275",
+            "name": "Table/Sized/Cell/Header",
+            "type": "INSTANCE",
+            "width": 95,
+            "height": 30,
+            "text": [
+              "TL metal"
+            ]
+          },
+          {
+            "id": "I30175:31908;30203:35276",
+            "name": "Table/Sized/Cell/Header",
+            "type": "INSTANCE",
+            "width": 95,
+            "height": 30,
+            "text": [
+              "TL đá"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "I30175:31908;30203:35376",
+    "name": "Table Group 5",
+    "type": "FRAME",
+    "width": 427,
+    "height": 60,
+    "text": [
+      "Nguyên liệu",
+      "Loại NL",
+      "Hàm lượng vàng",
+      "Tuổi NL",
+      "Màu NL"
+    ],
+    "children": [
+      {
+        "id": "I30175:31908;30203:35377",
+        "name": "Table/Sized/Cell/Header",
+        "type": "INSTANCE",
+        "width": 427,
+        "height": 30,
+        "text": [
+          "Nguyên liệu"
+        ],
+        "children": [
+          {
+            "id": "I30175:31908;30203:35377;29978:123",
+            "name": "Cell header",
+            "type": "TEXT",
+            "width": 395,
+            "height": 20,
+            "text": [
+              "Nguyên liệu"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "I30175:31908;30203:35378",
+        "name": "Frame 1948756207",
+        "type": "FRAME",
+        "width": 427,
+        "height": 30,
+        "text": [
+          "Loại NL",
+          "Hàm lượng vàng",
+          "Tuổi NL",
+          "Màu NL"
+        ],
+        "children": [
+          {
+            "id": "I30175:31908;30203:35379",
+            "name": "Table/Sized/Cell/Header",
+            "type": "INSTANCE",
+            "width": 95,
+            "height": 30,
+            "text": [
+              "Loại NL"
+            ]
+          },
+          {
+            "id": "I30175:31908;30203:35380",
+            "name": "Table/Sized/Cell/Header",
+            "type": "INSTANCE",
+            "width": 142,
+            "height": 30,
+            "text": [
+              "Hàm lượng vàng"
+            ]
+          },
+          {
+            "id": "I30175:31908;30203:35381",
+            "name": "Table/Sized/Cell/Header",
+            "type": "INSTANCE",
+            "width": 95,
+            "height": 30,
+            "text": [
+              "Tuổi NL"
+            ]
+          },
+          {
+            "id": "I30175:31908;30203:35422",
+            "name": "Table/Sized/Cell/Header",
+            "type": "INSTANCE",
+            "width": 95,
+            "height": 30,
+            "text": [
+              "Màu NL"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "I30175:31908;30208:18904",
+    "name": "Trọng lượng hao hụt",
+    "type": "FRAME",
+    "width": 2815,
+    "height": 60,
+    "text": [
+      "Trọng lượng hao hụt",
+      "OUT",
+      "Carot",
+      "Vụn phế phẩm",
+      "TL vụn",
+      "TL bụi",
+      "Dẻ đúc casting (CAS)",
+      "Dẻ đúc HTJ (FCS)",
+      "Dẻ 24K (24K)",
+      "TL Vụn HTJ (HPS)",
+      "TL Vụn đúc (DCS)",
+      "TL Vụn trứng cá (SHS)",
+      "TL Vụn findings (DFS)",
+      "TL Vụn REJ (RFS)",
+      "TL Bụi HTJ (HPD)",
+      "TL Bụi móc máy (DCD)",
+      "TL Bụi sprue (SPD)",
+      "TL Vụn sản xuất (PPS)",
+      "Tổng OUT",
+      "Hàm lượng",
+      "SL còn lại"
+    ],
+    "children": [
+      {
+        "id": "I30175:31908;30208:18905",
+        "name": "Trọng lượng hao hụt",
+        "type": "INSTANCE",
+        "width": 2815,
+        "height": 30,
+        "text": [
+          "Trọng lượng hao hụt"
+        ],
+        "children": [
+          {
+            "id": "I30175:31908;30208:18905;29978:123",
+            "name": "Cell header",
+            "type": "TEXT",
+            "width": 2783,
+            "height": 20,
+            "text": [
+              "Trọng lượng hao hụt"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "I30175:31908;30208:18906",
+        "name": "Các trường / Trọng lượng hao hụt",
+        "type": "FRAME",
+        "width": 2815,
+        "height": 30,
+        "text": [
+          "OUT",
+          "Carot",
+          "Vụn phế phẩm",
+          "TL vụn",
+          "TL bụi",
+          "Dẻ đúc casting (CAS)",
+          "Dẻ đúc HTJ (FCS)",
+          "Dẻ 24K (24K)",
+          "TL Vụn HTJ (HPS)",
+          "TL Vụn đúc (DCS)",
+          "TL Vụn trứng cá (SHS)",
+          "TL Vụn findings (DFS)",
+          "TL Vụn REJ (RFS)",
+          "TL Bụi HTJ (HPD)",
+          "TL Bụi móc máy (DCD)",
+          "TL Bụi sprue (SPD)",
+          "TL Vụn sản xuất (PPS)",
+          "Tổng OUT",
+          "Hàm lượng",
+          "SL còn lại"
+        ],
+        "children": [
+          {
+            "id": "I30175:31908;30208:18941",
+            "name": "OUT",
+            "type": "INSTANCE",
+            "width": 95,
+            "height": 30,
+            "text": [
+              "OUT"
+            ]
+          },
+          {
+            "id": "I30175:31908;30208:18947",
+            "name": "Carot",
+            "type": "INSTANCE",
+            "width": 95,
+            "height": 30,
+            "text": [
+              "Carot"
+            ]
+          },
+          {
+            "id": "I30175:31908;30208:18953",
+            "name": "Vụn phế phẩm",
+            "type": "INSTANCE",
+            "width": 133,
+            "height": 30,
+            "text": [
+              "Vụn phế phẩm"
+            ]
+          },
+          {
+            "id": "I30175:31908;30208:18959",
+            "name": "TL vụn",
+            "type": "INSTANCE",
+            "width": 95,
+            "height": 30,
+            "text": [
+              "TL vụn"
+            ]
+          },
+          {
+            "id": "I30175:31908;30208:18965",
+            "name": "TL bụi",
+            "type": "INSTANCE",
+            "width": 95,
+            "height": 30,
+            "text": [
+              "TL bụi"
+            ]
+          },
+          {
+            "id": "I30175:31908;30208:18971",
+            "name": "Dẻ đúc casting (CAS)",
+            "type": "INSTANCE",
+            "width": 180,
+            "height": 30,
+            "text": [
+              "Dẻ đúc casting (CAS)"
+            ]
+          },
+          {
+            "id": "I30175:31908;30208:18977",
+            "name": "Dẻ đúc HTJ (FCS)",
+            "type": "INSTANCE",
+            "width": 156,
+            "height": 30,
+            "text": [
+              "Dẻ đúc HTJ (FCS)"
+            ]
+          },
+          {
+            "id": "I30175:31908;30208:18983",
+            "name": "Dẻ 24K (24K)",
+            "type": "INSTANCE",
+            "width": 127,
+            "height": 30,
+            "text": [
+              "Dẻ 24K (24K)"
+            ]
+          },
+          {
+            "id": "I30175:31908;30208:18989",
+            "name": "TL Vụn HTJ (HPS)",
+            "type": "INSTANCE",
+            "width": 156,
+            "height": 30,
+            "text": [
+              "TL Vụn HTJ (HPS)"
+            ]
+          },
+          {
+            "id": "I30175:31908;30208:18995",
+            "name": "TL Vụn đúc (DCS)",
+            "type": "INSTANCE",
+            "width": 156,
+            "height": 30,
+            "text": [
+              "TL Vụn đúc (DCS)"
+            ]
+          },
+          {
+            "id": "I30175:31908;30208:19001",
+            "name": "TL Vụn trứng cá (SHS)",
+            "type": "INSTANCE",
+            "width": 187,
+            "height": 30,
+            "text": [
+              "TL Vụn trứng cá (SHS)"
+            ]
+          },
+          {
+            "id": "I30175:31908;30208:19007",
+            "name": "TL Vụn findings (DFS)",
+            "type": "INSTANCE",
+            "width": 183,
+            "height": 30,
+            "text": [
+              "TL Vụn findings (DFS)"
+            ]
+          },
+          {
+            "id": "I30175:31908;30208:19013",
+            "name": "TL Vụn REJ (RFS)",
+            "type": "INSTANCE",
+            "width": 154,
+            "height": 30,
+            "text": [
+              "TL Vụn REJ (RFS)"
+            ]
+          },
+          {
+            "id": "I30175:31908;30208:19019",
+            "name": "TL Bụi HTJ (HPD)",
+            "type": "INSTANCE",
+            "width": 152,
+            "height": 30,
+            "text": [
+              "TL Bụi HTJ (HPD)"
+            ]
+          },
+          {
+            "id": "I30175:31908;30208:19025",
+            "name": "TL Bụi móc máy (DCD)",
+            "type": "INSTANCE",
+            "width": 188,
+            "height": 30,
+            "text": [
+              "TL Bụi móc máy (DCD)"
+            ]
+          },
+          {
+            "id": "I30175:31908;30208:19031",
+            "name": "TL Bụi sprue (SPD)",
+            "type": "INSTANCE",
+            "width": 163,
+            "height": 30,
+            "text": [
+              "TL Bụi sprue (SPD)"
+            ]
+          },
+          {
+            "id": "I30175:31908;30208:19037",
+            "name": "TL Vụn sản xuất (PPS)",
+            "type": "INSTANCE",
+            "width": 186,
+            "height": 30,
+            "text": [
+              "TL Vụn sản xuất (PPS)"
+            ]
+          },
+          {
+            "id": "I30175:31908;30208:19043",
+            "name": "Tổng OUT",
+            "type": "INSTANCE",
+            "width": 104,
+            "height": 30,
+            "text": [
+              "Tổng OUT"
+            ]
+          },
+          {
+            "id": "I30175:31908;30208:19049",
+            "name": "Hàm lượng",
+            "type": "INSTANCE",
+            "width": 109,
+            "height": 30,
+            "text": [
+              "Hàm lượng"
+            ]
+          },
+          {
+            "id": "I30175:31908;30208:19055",
+            "name": "SL còn lại",
+            "type": "INSTANCE",
+            "width": 101,
+            "height": 30,
+            "text": [
+              "SL còn lại"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "I30175:31908;30208:19061",
+    "name": "Thời gian dự kiến",
+    "type": "FRAME",
+    "width": 568,
+    "height": 60,
+    "text": [
+      "Thời gian dự kiến",
+      "Ngày bắt đầu dự kiến",
+      "Ngày đồng bộ dự kiến",
+      "Ngày hoàn thành dự kiến"
+    ],
+    "children": [
+      {
+        "id": "I30175:31908;30208:19062",
+        "name": "Thời gian dự kiến",
+        "type": "INSTANCE",
+        "width": 568,
+        "height": 30,
+        "text": [
+          "Thời gian dự kiến"
+        ],
+        "children": [
+          {
+            "id": "I30175:31908;30208:19062;29978:123",
+            "name": "Cell header",
+            "type": "TEXT",
+            "width": 536,
+            "height": 20,
+            "text": [
+              "Thời gian dự kiến"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "I30175:31908;30208:19063",
+        "name": "Các trường / Thời gian dự kiến",
+        "type": "FRAME",
+        "width": 568,
+        "height": 30,
+        "text": [
+          "Ngày bắt đầu dự kiến",
+          "Ngày đồng bộ dự kiến",
+          "Ngày hoàn thành dự kiến"
+        ],
+        "children": [
+          {
+            "id": "I30175:31908;30208:19098",
+            "name": "Ngày bắt đầu dự kiến",
+            "type": "INSTANCE",
+            "width": 180,
+            "height": 30,
+            "text": [
+              "Ngày bắt đầu dự kiến"
+            ]
+          },
+          {
+            "id": "I30175:31908;30208:19104",
+            "name": "Ngày đồng bộ dự kiến",
+            "type": "INSTANCE",
+            "width": 184,
+            "height": 30,
+            "text": [
+              "Ngày đồng bộ dự kiến"
+            ]
+          },
+          {
+            "id": "I30175:31908;30208:19110",
+            "name": "Ngày hoàn thành dự kiến",
+            "type": "INSTANCE",
+            "width": 204,
+            "height": 30,
+            "text": [
+              "Ngày hoàn thành dự kiến"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "I30175:31908;30208:19116",
+    "name": "Pause",
+    "type": "FRAME",
+    "width": 278,
+    "height": 60,
+    "text": [
+      "Pause",
+      "Số lý do Pause",
+      "Thời gian Pause"
+    ],
+    "children": [
+      {
+        "id": "I30175:31908;30208:19117",
+        "name": "Pause",
+        "type": "INSTANCE",
+        "width": 278,
+        "height": 30,
+        "text": [
+          "Pause"
+        ],
+        "children": [
+          {
+            "id": "I30175:31908;30208:19117;29978:123",
+            "name": "Cell header",
+            "type": "TEXT",
+            "width": 246,
+            "height": 20,
+            "text": [
+              "Pause"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "I30175:31908;30208:19118",
+        "name": "Các trường / Pause",
+        "type": "FRAME",
+        "width": 278,
+        "height": 30,
+        "text": [
+          "Số lý do Pause",
+          "Thời gian Pause"
+        ],
+        "children": [
+          {
+            "id": "I30175:31908;30208:19153",
+            "name": "Số lý do Pause",
+            "type": "INSTANCE",
+            "width": 135,
+            "height": 30,
+            "text": [
+              "Số lý do Pause"
+            ]
+          },
+          {
+            "id": "I30175:31908;30208:19159",
+            "name": "Thời gian Pause",
+            "type": "INSTANCE",
+            "width": 143,
+            "height": 30,
+            "text": [
+              "Thời gian Pause"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "I30175:31908;30208:19165",
+    "name": "Pending",
+    "type": "FRAME",
+    "width": 906,
+    "height": 60,
+    "text": [
+      "Pending",
+      "Số lý do Pending chủ quan",
+      "Thời gian Pending chủ quan",
+      "Số lý do Pending khách quan",
+      "Thời gian Pending khách quan"
+    ],
+    "children": [
+      {
+        "id": "I30175:31908;30208:19166",
+        "name": "Pending",
+        "type": "INSTANCE",
+        "width": 906,
+        "height": 30,
+        "text": [
+          "Pending"
+        ],
+        "children": [
+          {
+            "id": "I30175:31908;30208:19166;29978:123",
+            "name": "Cell header",
+            "type": "TEXT",
+            "width": 874,
+            "height": 20,
+            "text": [
+              "Pending"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "I30175:31908;30208:19167",
+        "name": "Các trường / Pending",
+        "type": "FRAME",
+        "width": 906,
+        "height": 30,
+        "text": [
+          "Số lý do Pending chủ quan",
+          "Thời gian Pending chủ quan",
+          "Số lý do Pending khách quan",
+          "Thời gian Pending khách quan"
+        ],
+        "children": [
+          {
+            "id": "I30175:31908;30208:19202",
+            "name": "Số lý do Pending chủ quan",
+            "type": "INSTANCE",
+            "width": 215,
+            "height": 30,
+            "text": [
+              "Số lý do Pending chủ quan"
+            ]
+          },
+          {
+            "id": "I30175:31908;30208:19208",
+            "name": "Thời gian Pending chủ quan",
+            "type": "INSTANCE",
+            "width": 222,
+            "height": 30,
+            "text": [
+              "Thời gian Pending chủ quan"
+            ]
+          },
+          {
+            "id": "I30175:31908;30208:19214",
+            "name": "Số lý do Pending khách quan",
+            "type": "INSTANCE",
+            "width": 231,
+            "height": 30,
+            "text": [
+              "Số lý do Pending khách quan"
+            ]
+          },
+          {
+            "id": "I30175:31908;30208:19220",
+            "name": "Thời gian Pending khách quan",
+            "type": "INSTANCE",
+            "width": 238,
+            "height": 30,
+            "text": [
+              "Thời gian Pending khách quan"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

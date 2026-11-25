@@ -1,0 +1,729 @@
+{
+  "source": "Figma node 30175:29581; nested header instance 30175:31908; body instance 30216:41414",
+  "figmaTotal": 58,
+  "beforeTotal": 12,
+  "afterTotal": 58,
+  "fields": [
+    {
+      "order": 2,
+      "key": "code",
+      "label": "Mã bag",
+      "group": "",
+      "type": "text",
+      "width": 150,
+      "figmaNode": "I30175:31908;30216:49534",
+      "status": "Sai cấu hình",
+      "before": [
+        "Mã Bag",
+        150
+      ],
+      "action": "Đồng bộ tên/width/nhóm; hiển thị mặc định"
+    },
+    {
+      "order": 3,
+      "key": "priority",
+      "label": "Ưu tiên",
+      "group": "",
+      "type": "select",
+      "width": 108,
+      "figmaNode": "I30175:31908;30203:34832",
+      "status": "Sai cấu hình",
+      "before": [
+        "Ưu tiên",
+        110
+      ],
+      "action": "Đồng bộ tên/width/nhóm; hiển thị mặc định"
+    },
+    {
+      "order": 4,
+      "key": "status",
+      "label": "TT hiện tại",
+      "group": "Trạng thái",
+      "type": "select",
+      "width": 104,
+      "figmaNode": "I30175:31908;30175:32011",
+      "status": "Sai cấu hình",
+      "before": [
+        "Trạng thái hiện tại",
+        180
+      ],
+      "action": "Đồng bộ tên/width/nhóm; hiển thị mặc định"
+    },
+    {
+      "order": 5,
+      "key": "execution",
+      "label": "TT thực thi",
+      "group": "Trạng thái",
+      "type": "select",
+      "width": 107,
+      "figmaNode": "I30175:31908;30203:34902",
+      "status": "Sai cấu hình",
+      "before": [
+        "Trạng thái thực thi",
+        165
+      ],
+      "action": "Đồng bộ tên/width/nhóm; hiển thị mặc định"
+    },
+    {
+      "order": 6,
+      "key": "currentModule",
+      "label": "Module điều phối",
+      "group": "Trạng thái",
+      "type": "select",
+      "width": 149,
+      "figmaNode": "I30175:31908;30175:31988",
+      "status": "Sai cấu hình",
+      "before": [
+        "Module điều phối",
+        155
+      ],
+      "action": "Đồng bộ tên/width/nhóm; hiển thị mặc định"
+    },
+    {
+      "order": 7,
+      "key": "operation",
+      "label": "Công đoạn hiện tại",
+      "group": "Trạng thái",
+      "type": "text",
+      "width": 159,
+      "figmaNode": "I30175:31908;30203:34913",
+      "status": "Sai cấu hình",
+      "before": [
+        "Công đoạn hiện tại",
+        210
+      ],
+      "action": "Đồng bộ tên/width/nhóm; hiển thị mặc định"
+    },
+    {
+      "order": 8,
+      "key": "assignedTo",
+      "label": "Người được điều phối",
+      "group": "Trạng thái",
+      "type": "person",
+      "width": 177,
+      "figmaNode": "I30175:31908;30203:34924",
+      "status": "Sai cấu hình",
+      "before": [
+        "Người được điều phối",
+        190
+      ],
+      "action": "Đồng bộ tên/width/nhóm; hiển thị mặc định"
+    },
+    {
+      "order": 9,
+      "key": "holder",
+      "label": "Người giữ bag",
+      "group": "Trạng thái",
+      "type": "person",
+      "width": 127,
+      "figmaNode": "I30175:31908;30203:34935",
+      "status": "Sai cấu hình",
+      "before": [
+        "Người giữ Bag",
+        180
+      ],
+      "action": "Đồng bộ tên/width/nhóm; hiển thị mặc định"
+    },
+    {
+      "order": 10,
+      "key": "orderGroup",
+      "label": "Order group",
+      "group": "Đơn hàng / sản phẩm",
+      "type": "text",
+      "width": 118,
+      "figmaNode": "I30175:31908;30208:18898",
+      "status": "Sai cấu hình",
+      "before": [
+        "Order Group",
+        145
+      ],
+      "action": "Đồng bộ tên/width/nhóm; hiển thị mặc định"
+    },
+    {
+      "order": 11,
+      "key": "orderType",
+      "label": "Order Type",
+      "group": "Đơn hàng / sản phẩm",
+      "type": "select",
+      "width": 108,
+      "figmaNode": "I30175:31908;30203:35044",
+      "status": "Sai cấu hình",
+      "before": [
+        "Order Type",
+        170
+      ],
+      "action": "Đồng bộ tên/width/nhóm; hiển thị mặc định"
+    },
+    {
+      "order": 12,
+      "key": "unit",
+      "label": "Unit",
+      "group": "Đơn hàng / sản phẩm",
+      "type": "text",
+      "width": 95,
+      "figmaNode": "I30175:31908;30203:35045",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 13,
+      "key": "productionLine",
+      "label": "Line Wax / Line SX",
+      "group": "Đơn hàng / sản phẩm",
+      "type": "text",
+      "width": 157,
+      "figmaNode": "I30175:31908;30203:35046",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 14,
+      "key": "orderCode",
+      "label": "Mã Order",
+      "group": "Đơn hàng / sản phẩm",
+      "type": "text",
+      "width": 96,
+      "figmaNode": "I30175:31908;30203:35047",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 15,
+      "key": "customerCode",
+      "label": "Mã KH",
+      "group": "Đơn hàng / sản phẩm",
+      "type": "text",
+      "width": 95,
+      "figmaNode": "I30175:31908;30203:35048",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 16,
+      "key": "mpsCode",
+      "label": "Mã MPS",
+      "group": "Đơn hàng / sản phẩm",
+      "type": "text",
+      "width": 95,
+      "figmaNode": "I30175:31908;30203:35049",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 17,
+      "key": "castingOrderCode",
+      "label": "Mã Casting Order",
+      "group": "Đơn hàng / sản phẩm",
+      "type": "text",
+      "width": 151,
+      "figmaNode": "I30175:31908;30203:35116",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 18,
+      "key": "productCode",
+      "label": "Mã sản phẩm",
+      "group": "Đơn hàng / sản phẩm",
+      "type": "text",
+      "width": 122,
+      "figmaNode": "I30175:31908;30203:35127",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 19,
+      "key": "designCode",
+      "label": "Mã thiết kế",
+      "group": "Đơn hàng / sản phẩm",
+      "type": "text",
+      "width": 108,
+      "figmaNode": "I30175:31908;30203:35138",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 20,
+      "key": "plannedQuantity",
+      "label": "SL dự kiến",
+      "group": "Số lượng",
+      "type": "number",
+      "width": 103,
+      "figmaNode": "I30175:31908;30203:35153",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 21,
+      "key": "actualQuantity",
+      "label": "SL thực tế",
+      "group": "Số lượng",
+      "type": "number",
+      "width": 102,
+      "figmaNode": "I30175:31908;30203:35154",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 22,
+      "key": "inputWeight",
+      "label": "TL IN",
+      "group": "Trọng lượng",
+      "type": "number",
+      "width": 95,
+      "figmaNode": "I30175:31908;30203:35274",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 23,
+      "key": "metalWeight",
+      "label": "TL metal",
+      "group": "Trọng lượng",
+      "type": "number",
+      "width": 95,
+      "figmaNode": "I30175:31908;30203:35275",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 24,
+      "key": "stoneWeight",
+      "label": "TL đá",
+      "group": "Trọng lượng",
+      "type": "number",
+      "width": 95,
+      "figmaNode": "I30175:31908;30203:35276",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 25,
+      "key": "materialType",
+      "label": "Loại NL",
+      "group": "Nguyên liệu",
+      "type": "select",
+      "width": 95,
+      "figmaNode": "I30175:31908;30203:35379",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 26,
+      "key": "goldContent",
+      "label": "Hàm lượng vàng",
+      "group": "Nguyên liệu",
+      "type": "number",
+      "width": 142,
+      "figmaNode": "I30175:31908;30203:35380",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 27,
+      "key": "materialAge",
+      "label": "Tuổi NL",
+      "group": "Nguyên liệu",
+      "type": "select",
+      "width": 95,
+      "figmaNode": "I30175:31908;30203:35381",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 28,
+      "key": "materialColor",
+      "label": "Màu NL",
+      "group": "Nguyên liệu",
+      "type": "select",
+      "width": 95,
+      "figmaNode": "I30175:31908;30203:35422",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 29,
+      "key": "outWeight",
+      "label": "OUT",
+      "group": "Trọng lượng hao hụt",
+      "type": "number",
+      "width": 95,
+      "figmaNode": "I30175:31908;30208:18941",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 30,
+      "key": "carotWeight",
+      "label": "Carot",
+      "group": "Trọng lượng hao hụt",
+      "type": "number",
+      "width": 95,
+      "figmaNode": "I30175:31908;30208:18947",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 31,
+      "key": "scrapWeight",
+      "label": "Vụn phế phẩm",
+      "group": "Trọng lượng hao hụt",
+      "type": "number",
+      "width": 133,
+      "figmaNode": "I30175:31908;30208:18953",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 32,
+      "key": "fragmentWeight",
+      "label": "TL vụn",
+      "group": "Trọng lượng hao hụt",
+      "type": "number",
+      "width": 95,
+      "figmaNode": "I30175:31908;30208:18959",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 33,
+      "key": "dustWeight",
+      "label": "TL bụi",
+      "group": "Trọng lượng hao hụt",
+      "type": "number",
+      "width": 95,
+      "figmaNode": "I30175:31908;30208:18965",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 34,
+      "key": "castingScrapCAS",
+      "label": "Dẻ đúc casting (CAS)",
+      "group": "Trọng lượng hao hụt",
+      "type": "number",
+      "width": 180,
+      "figmaNode": "I30175:31908;30208:18971",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 35,
+      "key": "castingScrapFCS",
+      "label": "Dẻ đúc HTJ (FCS)",
+      "group": "Trọng lượng hao hụt",
+      "type": "number",
+      "width": 156,
+      "figmaNode": "I30175:31908;30208:18977",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 36,
+      "key": "scrap24K",
+      "label": "Dẻ 24K (24K)",
+      "group": "Trọng lượng hao hụt",
+      "type": "number",
+      "width": 127,
+      "figmaNode": "I30175:31908;30208:18983",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 37,
+      "key": "fragmentHPS",
+      "label": "TL Vụn HTJ (HPS)",
+      "group": "Trọng lượng hao hụt",
+      "type": "number",
+      "width": 156,
+      "figmaNode": "I30175:31908;30208:18989",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 38,
+      "key": "fragmentDCS",
+      "label": "TL Vụn đúc (DCS)",
+      "group": "Trọng lượng hao hụt",
+      "type": "number",
+      "width": 156,
+      "figmaNode": "I30175:31908;30208:18995",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 39,
+      "key": "fragmentSHS",
+      "label": "TL Vụn trứng cá (SHS)",
+      "group": "Trọng lượng hao hụt",
+      "type": "number",
+      "width": 187,
+      "figmaNode": "I30175:31908;30208:19001",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 40,
+      "key": "fragmentDFS",
+      "label": "TL Vụn findings (DFS)",
+      "group": "Trọng lượng hao hụt",
+      "type": "number",
+      "width": 183,
+      "figmaNode": "I30175:31908;30208:19007",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 41,
+      "key": "fragmentRFS",
+      "label": "TL Vụn REJ (RFS)",
+      "group": "Trọng lượng hao hụt",
+      "type": "number",
+      "width": 154,
+      "figmaNode": "I30175:31908;30208:19013",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 42,
+      "key": "dustHPD",
+      "label": "TL Bụi HTJ (HPD)",
+      "group": "Trọng lượng hao hụt",
+      "type": "number",
+      "width": 152,
+      "figmaNode": "I30175:31908;30208:19019",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 43,
+      "key": "dustDCD",
+      "label": "TL Bụi móc máy (DCD)",
+      "group": "Trọng lượng hao hụt",
+      "type": "number",
+      "width": 188,
+      "figmaNode": "I30175:31908;30208:19025",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 44,
+      "key": "dustSPD",
+      "label": "TL Bụi sprue (SPD)",
+      "group": "Trọng lượng hao hụt",
+      "type": "number",
+      "width": 163,
+      "figmaNode": "I30175:31908;30208:19031",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 45,
+      "key": "productionScrapPPS",
+      "label": "TL Vụn sản xuất (PPS)",
+      "group": "Trọng lượng hao hụt",
+      "type": "number",
+      "width": 186,
+      "figmaNode": "I30175:31908;30208:19037",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 46,
+      "key": "totalOutWeight",
+      "label": "Tổng OUT",
+      "group": "Trọng lượng hao hụt",
+      "type": "number",
+      "width": 104,
+      "figmaNode": "I30175:31908;30208:19043",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 47,
+      "key": "lossContent",
+      "label": "Hàm lượng",
+      "group": "Trọng lượng hao hụt",
+      "type": "number",
+      "width": 109,
+      "figmaNode": "I30175:31908;30208:19049",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 48,
+      "key": "remainingQuantity",
+      "label": "SL còn lại",
+      "group": "Trọng lượng hao hụt",
+      "type": "number",
+      "width": 101,
+      "figmaNode": "I30175:31908;30208:19055",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 49,
+      "key": "plannedStart",
+      "label": "Ngày bắt đầu dự kiến",
+      "group": "Thời gian dự kiến",
+      "type": "datetime",
+      "width": 180,
+      "figmaNode": "I30175:31908;30208:19098",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 50,
+      "key": "plannedSync",
+      "label": "Ngày đồng bộ dự kiến",
+      "group": "Thời gian dự kiến",
+      "type": "datetime",
+      "width": 184,
+      "figmaNode": "I30175:31908;30208:19104",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 51,
+      "key": "plannedEnd",
+      "label": "Ngày hoàn thành dự kiến",
+      "group": "Thời gian dự kiến",
+      "type": "datetime",
+      "width": 204,
+      "figmaNode": "I30175:31908;30208:19110",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 52,
+      "key": "pauseReasons",
+      "label": "Số lý do Pause",
+      "group": "Pause",
+      "type": "number",
+      "width": 135,
+      "figmaNode": "I30175:31908;30208:19153",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 53,
+      "key": "pauseDuration",
+      "label": "Thời gian Pause",
+      "group": "Pause",
+      "type": "text",
+      "width": 143,
+      "figmaNode": "I30175:31908;30208:19159",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 54,
+      "key": "pendingInternalReasons",
+      "label": "Số lý do Pending chủ quan",
+      "group": "Pending",
+      "type": "number",
+      "width": 215,
+      "figmaNode": "I30175:31908;30208:19202",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 55,
+      "key": "pendingInternalDuration",
+      "label": "Thời gian Pending chủ quan",
+      "group": "Pending",
+      "type": "text",
+      "width": 222,
+      "figmaNode": "I30175:31908;30208:19208",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 56,
+      "key": "pendingExternalReasons",
+      "label": "Số lý do Pending khách quan",
+      "group": "Pending",
+      "type": "number",
+      "width": 231,
+      "figmaNode": "I30175:31908;30208:19214",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    },
+    {
+      "order": 57,
+      "key": "pendingExternalDuration",
+      "label": "Thời gian Pending khách quan",
+      "group": "Pending",
+      "type": "text",
+      "width": 238,
+      "figmaNode": "I30175:31908;30208:19220",
+      "status": "Còn thiếu",
+      "before": null,
+      "action": "Bổ sung trường, dữ liệu demo; hiển thị mặc định"
+    }
+  ],
+  "utilities": [
+    {
+      "order": 1,
+      "key": "_select",
+      "figmaWidth": 48,
+      "engineWidth": 46
+    },
+    {
+      "order": 58,
+      "key": "_actions",
+      "figmaWidth": 72,
+      "engineWidth": 46
+    }
+  ],
+  "notes": [
+    "Cell types are implementation mappings from labels and body values, not Figma database schema.",
+    "Utility widths retain shared engine defaults. Header widths take precedence over body differences of 1px.",
+    "Duration shown as seconds; business formula and unit of weight not specified in Figma. Demo weights are illustrative, not inferred business calculations."
+  ]
+}

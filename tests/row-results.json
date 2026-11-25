@@ -1,0 +1,31 @@
+{
+  "at": "2026-11-25T03:31:01.847Z",
+  "browser": "Chrome via Playwright",
+  "results": [
+    {
+      "name": "First column defaults to centered row numbers; header checkbox stays visible",
+      "status": "PASS"
+    },
+    {
+      "name": "Hover replaces only its row number; leave restores number without layout shift",
+      "status": "PASS"
+    },
+    {
+      "name": "Selected rows keep checked checkbox; unselected rows return to their number",
+      "status": "PASS"
+    },
+    {
+      "name": "Shift selection and header unchecked/checked/indeterminate all remain functional",
+      "status": "PASS"
+    },
+    {
+      "name": "Row numbers follow pagination, sort, filtering and search navigation",
+      "status": "PASS"
+    },
+    {
+      "name": "Sticky width and 36px height remain stable with virtual scrolling",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

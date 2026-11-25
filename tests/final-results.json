@@ -1,0 +1,35 @@
+{
+  "at": "2026-11-25T03:21:15.196Z",
+  "browser": "Chrome via Playwright",
+  "results": [
+    {
+      "name": "Record Detail is a separate routed page; browser Back restores grid",
+      "status": "PASS"
+    },
+    {
+      "name": "Direct file Detail navigation and Return to grid",
+      "status": "PASS"
+    },
+    {
+      "name": "Selection toolbar never obscures Record Detail actions",
+      "status": "PASS"
+    },
+    {
+      "name": "Tabs/status controls retain their own active states across Views",
+      "status": "PASS"
+    },
+    {
+      "name": "Search finds visible formatted dates",
+      "status": "PASS"
+    },
+    {
+      "name": "Resize clamps minimum width; pin offsets survive sidebar collapse",
+      "status": "PASS"
+    },
+    {
+      "name": "No JavaScript errors in routing and final edge cases",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

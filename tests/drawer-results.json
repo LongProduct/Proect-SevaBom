@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-25T07:57:11.790Z",
+  "results": [
+    {
+      "name": "Full viewport drawer, square corners, unchanged 604px width and 4 columns",
+      "status": "PASS"
+    },
+    {
+      "name": "Only body scrolls; header and footer remain fixed",
+      "status": "PASS"
+    },
+    {
+      "name": "Backdrop blocks background scroll and close animates before hiding",
+      "status": "PASS"
+    },
+    {
+      "name": "Slide-in uses transform and synchronized backdrop fade; no search autofocus",
+      "status": "PASS"
+    },
+    {
+      "name": "Backdrop click and module selection use slide-out; state survives roundtrip",
+      "status": "PASS"
+    },
+    {
+      "name": "Tablet viewport, reduced motion, and no JavaScript errors",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}
