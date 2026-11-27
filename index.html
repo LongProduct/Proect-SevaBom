@@ -244,7 +244,30 @@ let moduleSuspended=false;
 const S={records:initialData(),receipts:initialReceipts(),mode:'erp',config:{...defaultConfig('erp'),...(instanceOptions.config||{})},views:Array.isArray(saved.views)?saved.views:[],viewId:'default',working:{},role:['viewer','editor','admin'].includes(saved.role)?saved.role:'admin',selected:new Set(),anchorRow:null,focus:null,range:null,copied:null,dragging:false,page:1,size:50,collapsed:new Set(),query:'',searchField:'all',hits:[],hit:-1,filtered:[],pageRows:[],flat:[],state:'normal',menu:null,detail:null,lastRefresh:new Date().toISOString(),category:0,version:0};
 const H={row:36,head:36};
 const fields=()=>schema(S.mode),field=k=>fields().find(c=>c.key===k), configCol=k=>S.config.columns.find(c=>c.key===k);
-function allColumns(){const defs=fields();let fixed=46;const budget=Math.max(46,($('#table-scroll')?.clientWidth||1400)-118);const base=S.config.columns.map(c=>({...defs.find(d=>d.key===c.key),...c})).filter(c=>c.key&&!c.hidden).map(c=>{if(c.pinned){if(fixed+c.width>budget)return {...c,pinned:false,suspended:true};fixed+=c.width;}return c;});return [{key:'_select',width:46,pinned:true,type:'selection',label:''},...base,{key:'_actions',width:46,right:true,type:'actions',label:''}];}
+// Base/user widths live in config; computed widths exist only in these clones.
+function displayColumns(){
+ const flexibleTypes=new Set(['text','longtext','person','createdby','modifiedby','relation','oneway','twoway','lookup','url','email','phone','location','attachment','multiselect','group']);
+ const columns=S.config.columns.map(c=>({...field(c.key),...c})).filter(c=>field(c.key)&&!c.hidden).map(c=>{
+  const definition=field(c.key),min=Math.max(72,Number(c.minWidth)||72),max=Math.max(min,Number(c.maxWidth)||Infinity);
+  const width=Math.max(min,Math.min(max,Number(c.width)||definition.width||min));
+  return {...c,width,baseWidth:width,userWidth:c.widthCustomized===true||(c.widthCustomized!==false&&c.width!==definition.width),fixedWidth:c.fixedWidth===true||c.widthLocked===true,grow:c.flexGrow===undefined?(flexibleTypes.has(c.type)?(c.type==='longtext'?2:1):0):Math.max(0,Number(c.flexGrow)||0)};
+ });
+ let extra=Math.max(0,($('#table-scroll')?.clientWidth||0)-92-columns.reduce((sum,c)=>sum+c.width,0));
+ const capacity=c=>Math.max(0,(Number(c.maxWidth)||Infinity)-c.width);
+ function distribute(candidates){
+  let active=candidates.filter(c=>capacity(c)>0);
+  while(extra>0.001&&active.length){const total=active.reduce((sum,c)=>sum+c.baseWidth*(c.grow||1),0),budget=extra;let used=0;
+   for(const c of active){const add=Math.min(capacity(c),budget*c.baseWidth*(c.grow||1)/total);c.width+=add;used+=add;}
+   extra=Math.max(0,extra-used);if(used<0.001)break;active=active.filter(c=>capacity(c)>0.001);
+  }
+ }
+ distribute(columns.filter(c=>!c.fixedWidth&&!c.userWidth&&c.grow>0));
+ // Explicit fallback key wins; otherwise the last non-fixed business column fills.
+ // This changes display only, including for customized widths when no grow capacity remains.
+ if(extra>0.001){const candidates=columns.filter(c=>!c.fixedWidth),preferred=candidates.find(c=>c.key===instanceOptions.adaptiveWidth?.fallbackColumn);const fallbacks=[...new Set([preferred,...candidates.reverse()].filter(Boolean))];for(const fallback of fallbacks){distribute([fallback]);if(extra<=0.001)break;}}
+ return columns;
+}
+function allColumns(){let fixed=46;const budget=Math.max(46,($('#table-scroll')?.clientWidth||1400)-118);const base=displayColumns().map(c=>{if(c.pinned){if(fixed+c.width>budget)return {...c,pinned:false,suspended:true};fixed+=c.width;}return c;});return [{key:'_select',width:46,pinned:true,type:'selection',label:''},...base,{key:'_actions',width:46,right:true,type:'actions',label:''}];}
 const dataColumns=()=>allColumns().filter(c=>!c.key.startsWith('_'));
 const recordById=id=>[...S.records,...S.receipts].find(r=>r.id===id);
 function value(r,key){
@@ -462,7 +485,7 @@ function scheduleExpandedCell(td){cancelExpandedPreview();expandedPreviewTimer=s
 function popup(title,content,anchor,init,width=420){closePopup();const el=document.createElement('section');el.className='popover';el.style.width=Math.min(width,window.innerWidth-16)+'px';el.setAttribute('role','dialog');el.setAttribute('aria-label',title);el.innerHTML=`<div class="popover-head"><strong>${esc(title)}</strong><button data-close-pop aria-label="Đóng">${icon('close')}</button></div><div class="popover-content">${content}</div>`;document.body.append(el);S.menu=el;$('[data-close-pop]',el).onclick=closePopup;init?.(el);placeOverlay(el,anchor);return el;}
 function menu(title,items,anchor){return popup(title,items.map(it=>it.line?'<hr>':`<button class="menu-option" data-menu="${it.id}" ${it.disabled?'disabled':''}>${icon(it.icon||'grid')}<span>${esc(it.label)}</span>${it.note?`<small>${esc(it.note)}</small>`:''}</button>`).join(''),anchor,el=>{el.onclick=e=>{const b=e.target.closest('[data-menu]');if(!b)return;const item=items.find(i=>i.id===b.dataset.menu);closePopup();item?.run?.();};},280);}
 function options(selected='',includeEmpty=false){return (includeEmpty?'<option value="">Không nhóm</option>':'')+fields().map(c=>`<option value="${c.key}" ${c.key===selected?'selected':''}>${esc(c.label)}</option>`).join('');}
-function resizeColumn(key,width){const c=configCol(key);if(!c)return;c.width=Math.max(72,Math.min(1200,Math.round(width)));applyWidths();}
+function resizeColumn(key,width,{reset=false}={}){const c=configCol(key),definition=field(key);if(!c)return;const min=Math.max(72,Number(definition.minWidth)||72),max=Math.max(min,Number(definition.maxWidth)||1200);c.width=Math.max(min,Math.min(max,Math.round(width)));c.widthCustomized=!reset;applyWidths();}
 function applyWidths(){const cols=allColumns(),off=offsets();$('#data-table').style.width=cols.reduce((a,c)=>a+c.width,0)+'px';$$('#colgroup col').forEach(el=>{const c=cols.find(c=>c.key===el.dataset.col);if(c)el.style.width=c.width+'px';});$$('th[data-key],td[data-key]').forEach(el=>{const c=cols.find(c=>c.key===el.dataset.key);el.classList.toggle('pinned',Boolean(c?.pinned));el.style.left=off.has(el.dataset.key)?off.get(el.dataset.key)+'px':'';const pin=$('.pin-icon',el);if(pin)pin.style.display=c?.pinned?'':'none';});}
 function autoFit(key){const c=field(key);const canvas=document.createElement('canvas'),ctx=canvas.getContext('2d');ctx.font='14px Inter, Arial';let width=ctx.measureText(c.label).width+18+(configCol(key)?.pinned?17:0)+(S.config.sorts.some(s=>s.field===key)?20:0);S.filtered.slice(0,1200).forEach(r=>{width=Math.max(width,ctx.measureText(raw(r,key)).width+36);});resizeColumn(key,Math.min(460,width));}
 function columnMenu(key,anchor){if(S.menu?.dataset.columnKey===key){closePopup();return;}const c=configCol(key),col=field(key),at=S.config.columns.findIndex(c=>c.key===key);const el=menu(col.label,[
@@ -472,7 +495,7 @@ function columnMenu(key,anchor){if(S.menu?.dataset.columnKey===key){closePopup()
  {id:'range',label:'Ghim từ đầu đến cột này',icon:'pin',run:()=>{S.config.columns.forEach((x,i)=>x.pinned=i<=at);configChanged();}},
  {id:'unpin',label:'Bỏ ghim tất cả',icon:'pin',run:()=>{S.config.columns.forEach(x=>x.pinned=false);configChanged();}},
  {id:'fit',label:'Tự khớp độ rộng',icon:'columns',run:()=>autoFit(key)},
- {id:'reset',label:'Đặt lại độ rộng cột',icon:'refresh',run:()=>resizeColumn(key,col.width)},
+ {id:'reset',label:'Đặt lại độ rộng cột',icon:'refresh',run:()=>resizeColumn(key,col.width,{reset:true})},
  {id:'hide',label:'Ẩn cột',icon:'eye',disabled:dataColumns().length===1,run:()=>{c.hidden=true;if(S.searchField===key)S.searchField='all';configChanged();}},
  {id:'left',label:'Di chuyển sang trái',icon:'left',disabled:at===0,run:()=>{const cols=S.config.columns;[cols[at-1],cols[at]]=[cols[at],cols[at-1]];configChanged();}},
  {id:'right',label:'Di chuyển sang phải',icon:'right',disabled:at===S.config.columns.length-1,run:()=>{const cols=S.config.columns;[cols[at],cols[at+1]]=[cols[at+1],cols[at]];configChanged();}}
@@ -481,7 +504,7 @@ function customize(anchor){popup('Tùy chỉnh cột',`<input class="control" id
  const render=()=>{$('#column-list',el).innerHTML=S.config.columns.filter(c=>field(c.key).label.toLocaleLowerCase('vi').includes($('#column-query',el).value.toLocaleLowerCase('vi'))).map(c=>`<div class="column-option"><label><input type="checkbox" data-show-col="${c.key}" ${!c.hidden?'checked':''}>${icon(typeIcon[field(c.key).type]||'text')}<span class="clip">${esc(field(c.key).label)}</span></label><input type="number" class="column-width" data-width-col="${c.key}" aria-label="Độ rộng ${esc(field(c.key).label)}" value="${c.width}" min="72" max="1200"><button data-pin-col="${c.key}" class="${c.pinned?'active':''}" aria-label="Ghim ${esc(field(c.key).label)}">${icon('pin')}</button></div>`).join('');};render();$('#column-query',el).oninput=render;
  el.onchange=e=>{const key=e.target.dataset.showCol||e.target.dataset.widthCol;if(!key)return;const c=configCol(key);if(e.target.dataset.showCol){if(!e.target.checked&&dataColumns().length===1){e.target.checked=true;return toast('Cần giữ ít nhất một cột hiển thị.');}c.hidden=!e.target.checked;if(c.hidden&&S.searchField===key)S.searchField='all';}else resizeColumn(key,Number(e.target.value)||72);compute();renderHeader();renderRows(true);renderFooter();};
  el.addEventListener('click',e=>{const p=e.target.closest('[data-pin-col]');if(p){configCol(p.dataset.pinCol).pinned=!configCol(p.dataset.pinCol).pinned;renderHeader();renderRows(true);render();}});
- $('#show-columns',el).onclick=()=>{S.config.columns.forEach(c=>c.hidden=false);render();compute();renderHeader();renderRows(true);};$('#reset-widths',el).onclick=()=>{S.config.columns.forEach(c=>c.width=field(c.key).width);render();applyWidths();};
+ $('#show-columns',el).onclick=()=>{S.config.columns.forEach(c=>c.hidden=false);render();compute();renderHeader();renderRows(true);};$('#reset-widths',el).onclick=()=>{S.config.columns.forEach(c=>{c.width=field(c.key).width;c.widthCustomized=false;});render();applyWidths();};
  },480);}
 function filterPanel(anchor){let draft=clone(S.config.filters),logic=S.config.logic;const el=popup('Bộ lọc',`<div class="panel-line"><span>Kết hợp điều kiện</span><select class="control" id="filter-logic"><option value="and">AND · Tất cả</option><option value="or">OR · Bất kỳ</option></select></div><div id="filter-rows"></div><button class="btn" id="add-filter">${icon('plus')}Thêm điều kiện</button><hr><div class="panel-actions"><button class="btn" id="clear-filters">Xóa tất cả</button><button class="primary" id="apply-filters">Áp dụng</button></div>`,anchor,p=>{
  const render=()=>{$('#filter-rows',p).innerHTML=draft.map((f,i)=>{const t=field(f.field)?.type;return `<div class="condition-row" data-condition="${i}"><select class="control f-field" aria-label="Trường lọc ${i+1}">${options(f.field)}</select><select class="control f-op" aria-label="Toán tử ${i+1}">${operators(f.field).map(([v,l])=>`<option value="${v}" ${f.op===v?'selected':''}>${l}</option>`).join('')}</select>${['empty','notempty'].includes(f.op)?'<span class="condition-value"></span>':t==='checkbox'?`<select class="control f-value"><option ${f.value==='Có'?'selected':''}>Có</option><option ${f.value==='Không'?'selected':''}>Không</option></select>`:`<input class="control f-value" aria-label="Giá trị ${i+1}" type="${numericTypes.has(t)?'number':dateTypes.has(t)?'date':'text'}" value="${esc(f.value)}">`}<button data-remove-filter="${i}" aria-label="Xóa điều kiện ${i+1}">${icon('close')}</button></div>`;}).join('')||'<p class="muted">Chưa có điều kiện lọc.</p>';placeOverlay(p,anchor);};
@@ -550,7 +573,7 @@ function moreTools(anchor){const items=[
  ];menu('Công cụ',instanceOptions.toolIds?items.filter(item=>instanceOptions.toolIds.includes(item.id)):items,anchor);}
 // Event delegation: headers, grid and overlays never install per-cell handlers.
 let resize=null,dragKey=null,lastPointer=null,autoScrollRaf=0,suppressClick=false;
-$('#head-row').addEventListener('pointerdown',e=>{const h=e.target.closest('[data-resize]');if(!h)return;e.preventDefault();e.stopPropagation();closePopup();const key=h.dataset.resize;resize={key,x:e.clientX,width:configCol(key).width};h.setPointerCapture(e.pointerId);document.body.classList.add('resizing');});
+$('#head-row').addEventListener('pointerdown',e=>{const h=e.target.closest('[data-resize]');if(!h)return;e.preventDefault();e.stopPropagation();closePopup();const key=h.dataset.resize;resize={key,x:e.clientX,width:allColumns().find(c=>c.key===key).width};h.setPointerCapture(e.pointerId);document.body.classList.add('resizing');});
 $('#head-row').addEventListener('dblclick',e=>{const h=e.target.closest('[data-resize]');if(h){e.preventDefault();autoFit(h.dataset.resize);}});
 $('#head-row').addEventListener('click',e=>{const b=e.target.closest('[data-column-menu]');if(b){columnMenu(b.dataset.columnMenu,b.closest('th'));}});
 $('#head-row').addEventListener('contextmenu',e=>{const h=e.target.closest('th[data-key]');if(h){e.preventDefault();columnMenu(h.dataset.key,h);}});
@@ -654,7 +677,7 @@ const api=Object.freeze({
 // Expose a read-only inspection snapshot for local QA, never mutation APIs.
 window.SEVAGO={snapshot:()=>({mode:S.mode,records:S.records.length,filtered:S.filtered.length,selected:[...S.selected],config:clone(S.config),page:S.page,size:S.size,hits:S.hits.length,role:S.role,rendered:$$('.record-row').length,focus:clone(S.focus)})};
 $$('[data-icon]').forEach(el=>el.innerHTML=icon(el.dataset.icon));
-new ResizeObserver(()=>{if(moduleSuspended)return;renderHeader();renderRows(true);}).observe($('#table-scroll'));
+new ResizeObserver(()=>{if(moduleSuspended)return;cancelExpandedPreview();finishColumnDrag();renderHeader();renderRows(true);}).observe($('#table-scroll'));
 refresh();
 window.addEventListener('popstate',()=>{if(custom)return;if(location.hash.startsWith('#/apps/')&&!location.hash.startsWith('#/apps/recruitment/'))return;if(location.hash.startsWith('#record=')){const id=decodeURIComponent(location.hash.slice(8));if(id==='new-receipt'||id==='new-order')openDetail(null,true,id==='new-receipt'?'receipt':'order');else if(recordById(id))openDetail(id);}else hideRecordPage(false);});
 if(!custom&&location.hash.startsWith('#record=')){const id=decodeURIComponent(location.hash.slice(8));if(recordById(id))openDetail(id);}
@@ -1426,6 +1449,48 @@ window.SEVAGO_BAG_PAGE=Object.freeze({create({section,state,data}){
  return controller;
 }});
 
+/* Page-owned weighing demo. Production workflow/units remain unconfigured. */
+window.SEVAGO_BAG_WEIGHING_PAGE=Object.freeze({create({section,state,data}){
+ const statuses=['Chờ Out','Đã điều phối'];state.status??=statuses[0];
+ const schema=[
+  {key:'code',label:'Mã Bag',type:'text',width:160},
+  {key:'item',label:'Mã Item',type:'text',width:170},
+  {key:'worker',label:'Công nhân',type:'person',width:210},
+  {key:'workcenter',label:'Workcenter',type:'text',width:190},
+  {key:'line',label:'Line',type:'text',width:150},
+  {key:'site',label:'Unit/Site',type:'text',width:210},
+  {key:'quantity',label:'Số lượng',type:'number',width:120},
+  {key:'weight',label:'Trọng lượng',type:'number',width:140},
+  {key:'status',label:'Trạng thái',type:'select',width:160}
+ ];
+ const workers=['Nguyễn Minh Anh','Trần Hoàng Nam','Lê Thị Thanh Trúc','Phạm Quốc Bảo','Hoàng Nguyễn Thiên Long – Tổ hoàn thiện sản phẩm'];
+ data.records=Array.from({length:60},(_,i)=>({id:'weighing-bag-'+(i+1),code:'DEMO-CB-'+String(i+1).padStart(5,'0'),item:'DEMO-ITEM-'+String(i%12+1).padStart(4,'0')+(i%9===0?' – Bộ trang sức phiên bản giới hạn':''),worker:workers[i%workers.length],workcenter:i%7===0?'WC-04 – Hoàn thiện và kiểm tra chất lượng sản phẩm':'WC-0'+(i%4+1),line:'Line '+String(i%5+1).padStart(2,'0'),site:i%8===0?'Unit/Site – Khu sản xuất công nghệ cao và hoàn thiện sản phẩm':'Unit/Site '+(i%3+1),quantity:5+i%24,weight:Number((2.125+i*0.1375).toFixed(4)),status:statuses[i%3===0?1:0]}));
+ const rows=()=>data.records.filter(r=>r.status===state.status);
+ let host=null,visible=true,ready=false;
+ const layout=SEVAGO_UI.createDataPage({section,title:'Danh sách Cân Bag',primaryTabs:{items:statuses.map(key=>({key,label:key})),onChange(key){state.status=key;update();}}});
+ const loading=document.createElement('p');loading.setAttribute('role','status');loading.textContent='Đang tải danh sách Cân Bag…';layout.slot.append(loading);
+ const unavailable='Chưa triển khai luồng cân; chờ yêu cầu nghiệp vụ và xác minh điều kiện cân trên Production.';
+ const workflowConfigured=false;
+ const canWeigh=api=>api.getSelection().length>0&&workflowConfigured;
+ // Both entry points share the same guard; never open a fabricated weighing flow.
+ const weigh=api=>{if(!canWeigh(api))return;};
+ function update(){layout.setTabs({primary:state.status});host?.api.setData(rows());}
+ async function initialize(){try{
+ host=await SEVAGO_UI.createTable(layout.slot,{id:'manufacturing-execution-bag-weighing',title:'Danh sách Cân Bag · Dữ liệu demo',storageKey:'sevago-me-bag-weighing-v1',schema,primaryKey:'code',data:rows(),totalCount:()=>rows().length,selectionLabel:'Bag',searchPlaceholder:'Tìm kiếm mã Bag...',defaultPinnedColumns:['code'],columnGroups:false,
+ primaryTitle:unavailable,primaryLabel:'<svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 4h14l-2 5H7L5 4Zm2 16h10l2-5H5l2 5Zm5-11v6"/></svg><span>Cân Bag</span>',actions:{selection:false,primary:weigh},toolIds:['refresh','states','reset'],toolbar:{order:['filter','sort','group','search','columns','more'],features:{date:false,status:false}},selection:{actions:[{id:'weigh',label:'Cân Bag',primary:true,enabled:(_,api)=>canWeigh(api),run:(_,api)=>weigh(api)}]},
+ hostCSS:'#copy-codes{display:none!important}',
+ renderCell(record,column,{value,marked,esc}){if(column.key==='weight')return `<span class="numeric" title="Giá trị demo, chưa xác minh đơn vị Production">${marked(String(value))}</span>`;if(column.key==='item')return `<button class="record-link clip" data-open-record="${esc(record.id)}">${marked(value)}</button>`;return null;},
+ onOpenRecord(record,{showDialog,esc}){if(!record)return;showDialog('Thông tin Cân Bag · '+record.code,`<p class="muted">Dữ liệu demo độc lập. Đơn vị và độ chính xác trọng lượng chưa được xác minh với Production.</p><div class="detail-grid">${schema.map(c=>`<div class="field-label">${esc(c.label)}<div class="detail-value">${esc(record[c.key])}</div></div>`).join('')}</div>`);}
+ });
+ const doc=host.iframe.contentDocument,button=doc.querySelector('#create');button.disabled=true;button.setAttribute('aria-label','Cân Bag');button.setAttribute('aria-description',unavailable);doc.querySelector('[data-selection-action="weigh"]').title=unavailable;
+ // Show the selected count without suggesting that the demo can execute weighing.
+ const sync=()=>{const disabled=!canWeigh(host.api);if(button.disabled!==disabled)button.disabled=disabled;button.title=host.api.getSelection().length?unavailable:'Chọn Bag bằng checkbox. '+unavailable;};
+ const observer=new doc.defaultView.MutationObserver(sync);observer.observe(doc.querySelector('#selection-count'),{childList:true});observer.observe(button,{attributes:true,attributeFilter:['disabled']});sync();
+ loading.remove();ready=true;if(!visible)host.api.suspend();return host;
+ }catch(error){console.error('Bag weighing demo initialization failed',error);loading.textContent='Không thể tải dữ liệu demo. Nhấn để thử lại.';loading.tabIndex=0;loading.onclick=()=>initialize();loading.onkeydown=e=>{if(e.key==='Enter')loading.click();};return null;}}
+ update();const promise=initialize();return {ready:promise,activate(){visible=true;host?.api.resume();},deactivate(){visible=false;host?.api.suspend();},snapshot:()=>({ready,status:state.status,records:data.records.length,table:host?.api.snapshot()}),getHost:()=>host};
+}});
+
 /* Manufacturing Execution: navigation only. No business records or table fork. */
 (()=>{
  const id='manufacturing-execution';
@@ -1452,7 +1517,7 @@ window.SEVAGO_BAG_PAGE=Object.freeze({create({section,state,data}){
  ];
  const pages=sidebar.flatMap(item=>[{id:item.id,name:item.label},...(item.children||[]).map(child=>({id:child.id,name:child.label}))]);
  const mounted=new WeakMap();
- document.addEventListener('sevago:module-change',e=>{for(const host of document.querySelectorAll('.me-workspace')){const ctx=mounted.get(host);if(e.detail.id!==id)ctx?.bags?.deactivate();}});
+ document.addEventListener('sevago:module-change',e=>{for(const host of document.querySelectorAll('.me-workspace')){const ctx=mounted.get(host);if(e.detail.id!==id){ctx?.bags?.deactivate();ctx?.weighing?.deactivate();}}});
  const definition={id,name:'Thực thi sản xuất',englishName:'Manufacturing Execution',description:'Manufacturing Execution',group:'Vận hành sản xuất',color:'#13A879',icon:SHELL_ASSETS['manufacturing-execution'],launcherIcon:SHELL_ASSETS['manufacturing-execution-launcher'],iconSize:44,implemented:true,defaultPage:'bags',route:`#/apps/${id}/bags`,sidebar,pages,
   mount({state,data,navigate}){
    const host=document.createElement('section');host.className='sevago-module-host me-workspace';host.dataset.moduleId=id;host.setAttribute('aria-label','Thực thi sản xuất');
@@ -1469,16 +1534,18 @@ window.SEVAGO_BAG_PAGE=Object.freeze({create({section,state,data}){
     const tableSlot=document.createElement('div');tableSlot.className='me-shared-table-slot';tableSlot.dataset.tablePage=page.id;tableSlot.hidden=true;
     section.append(heading,placeholder,tableSlot);content.append(section);containers.set(page.id,section);
    }
-   host.append(nav.element,content);mounted.set(host,{nav,content,containers,state,data,bags:null});nav.restore();return host;
+   host.append(nav.element,content);mounted.set(host,{nav,content,containers,state,data,bags:null,weighing:null});nav.restore();return host;
   },
   activate(host,{page}){
    const ctx=mounted.get(host);if(!ctx)return;
    const previous=ctx.state.activePage;if(previous&&previous!==page)ctx.state.pages[previous].scrollTop=ctx.content.scrollTop;
    for(const [key,container]of ctx.containers)container.hidden=key!==page;
    if(page==='bags'){if(!ctx.bags)ctx.bags=SEVAGO_BAG_PAGE.create({section:ctx.containers.get('bags'),state:ctx.state.pages.bags,data:ctx.data.pages.bags});ctx.bags.activate();}else ctx.bags?.deactivate();
+   if(page==='bag-weighing'){if(!ctx.weighing)ctx.weighing=SEVAGO_BAG_WEIGHING_PAGE.create({section:ctx.containers.get(page),state:ctx.state.pages[page],data:ctx.data.pages[page]});ctx.weighing.activate();}else ctx.weighing?.deactivate();
    ctx.state.activePage=page;ctx.nav.setActive(page);ctx.nav.restore();if(previous!==page)ctx.content.scrollTop=ctx.state.pages[page]?.scrollTop||0;
   }
  };
+ window.SEVAGO_BAG_WEIGHING_INSPECT=()=>{const host=document.querySelector('.me-workspace');return host?mounted.get(host)?.weighing?.snapshot():null;};
  window.SEVAGO_BAG_INSPECT=()=>{const host=document.querySelector('.me-workspace');return host?mounted.get(host)?.bags?.snapshot():null;};
  window.SEVAGO_MODULE_DEFINITIONS=[...(window.SEVAGO_MODULE_DEFINITIONS||[]),definition];
 })();

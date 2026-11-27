@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-27T04:20:55.622Z",
+  "results": [
+    "Few columns fill container with weighted growth, fixed utilities, 36px density and aligned cells",
+    "Manual resize locks user width; remaining flexible column grows; reset restores eligibility",
+    "Shrink overflows without compressing bases; expand, hidden columns and pins recompute",
+    "Empty and one-record data keep filled headers and 36px rows",
+    "Fallback fills customized columns in display only and preserves base configuration",
+    "Grouped header geometry reflects computed widths",
+    "Schema min/max and hard width locks take priority over fill",
+    "Restored stored configuration retains user bases and flags in a new root",
+    "Implemented weighing page fills after hide/show, sidebar/window resize and module roundtrip"
+  ],
+  "errors": []
+}

@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-27T01:30:29.483Z",
+  "at": "2026-11-27T04:18:00.121Z",
   "results": [
     {
       "name": "Launcher manufacturing group, embedded Figma logo, default bags route",
@@ -10,7 +10,7 @@
       "status": "PASS"
     },
     {
-      "name": "Every page has independent route/container, active state and no fake data",
+      "name": "Every page has independent route/container and active state; remaining pages are placeholders",
       "status": "PASS"
     },
     {

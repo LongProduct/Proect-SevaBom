@@ -95,3 +95,17 @@ Mở `TEST_REPORT.html` để xem bảng Pass/Fail và phạm vi kiểm thử. K
 - Chạy `node tests/grid-ui-refinements.cjs` cho 16 ca mới; `python3 tests/build_report.py` cập nhật bảng Pass/Fail sau khi chạy các bộ kiểm thử.
 
 - Cột đầu mặc định hiện STT; hover hàng hiện checkbox, hàng đã chọn giữ checkbox. Header checkbox giữ đủ ba trạng thái. STT theo thứ tự dữ liệu đã lọc/sort và offset phân trang, không thay đổi cột 46px hoặc hàng 36px. Kiểm thử riêng: `tests/grid-row-numbers.cjs`.
+
+## Demo Danh sách Cân Bag
+
+Route: `/#/apps/manufacturing-execution/bag-weighing`. Trang dùng shared page/table,
+60 bản ghi riêng (40 Chờ Out, 20 Đã điều phối), mặc định Chờ Out. Checkbox và
+selection bar hoạt động độc lập với range selection; dữ liệu/state không dùng chung
+với Danh sách bag. Trọng lượng là số demo giữ nguyên giá trị, chưa gán đơn vị Production.
+
+Luồng cân và điều kiện nghiệp vụ chưa được đặc tả: hai nút Cân Bag dùng cùng guard,
+tạm disabled và có tooltip giải thích. Chế độ xem Production và icon mở rộng chưa
+được xác minh nên chưa hiển thị. Search giữ cơ chế điều hướng/highlight của shared
+grid; không lọc bỏ bản ghi khi không có kết quả. Không thay đổi engine để xử lý riêng.
+
+Kiểm thử trang: `SEVAGO_TEST_URL=http://127.0.0.1:6187 node tests/bag-weighing.cjs`.

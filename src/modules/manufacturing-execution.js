@@ -24,7 +24,7 @@
  ];
  const pages=sidebar.flatMap(item=>[{id:item.id,name:item.label},...(item.children||[]).map(child=>({id:child.id,name:child.label}))]);
  const mounted=new WeakMap();
- document.addEventListener('sevago:module-change',e=>{for(const host of document.querySelectorAll('.me-workspace')){const ctx=mounted.get(host);if(e.detail.id!==id)ctx?.bags?.deactivate();}});
+ document.addEventListener('sevago:module-change',e=>{for(const host of document.querySelectorAll('.me-workspace')){const ctx=mounted.get(host);if(e.detail.id!==id){ctx?.bags?.deactivate();ctx?.weighing?.deactivate();}}});
  const definition={id,name:'Thực thi sản xuất',englishName:'Manufacturing Execution',description:'Manufacturing Execution',group:'Vận hành sản xuất',color:'#13A879',icon:SHELL_ASSETS['manufacturing-execution'],launcherIcon:SHELL_ASSETS['manufacturing-execution-launcher'],iconSize:44,implemented:true,defaultPage:'bags',route:`#/apps/${id}/bags`,sidebar,pages,
   mount({state,data,navigate}){
    const host=document.createElement('section');host.className='sevago-module-host me-workspace';host.dataset.moduleId=id;host.setAttribute('aria-label','Thực thi sản xuất');
@@ -41,16 +41,18 @@
     const tableSlot=document.createElement('div');tableSlot.className='me-shared-table-slot';tableSlot.dataset.tablePage=page.id;tableSlot.hidden=true;
     section.append(heading,placeholder,tableSlot);content.append(section);containers.set(page.id,section);
    }
-   host.append(nav.element,content);mounted.set(host,{nav,content,containers,state,data,bags:null});nav.restore();return host;
+   host.append(nav.element,content);mounted.set(host,{nav,content,containers,state,data,bags:null,weighing:null});nav.restore();return host;
   },
   activate(host,{page}){
    const ctx=mounted.get(host);if(!ctx)return;
    const previous=ctx.state.activePage;if(previous&&previous!==page)ctx.state.pages[previous].scrollTop=ctx.content.scrollTop;
    for(const [key,container]of ctx.containers)container.hidden=key!==page;
    if(page==='bags'){if(!ctx.bags)ctx.bags=SEVAGO_BAG_PAGE.create({section:ctx.containers.get('bags'),state:ctx.state.pages.bags,data:ctx.data.pages.bags});ctx.bags.activate();}else ctx.bags?.deactivate();
+   if(page==='bag-weighing'){if(!ctx.weighing)ctx.weighing=SEVAGO_BAG_WEIGHING_PAGE.create({section:ctx.containers.get(page),state:ctx.state.pages[page],data:ctx.data.pages[page]});ctx.weighing.activate();}else ctx.weighing?.deactivate();
    ctx.state.activePage=page;ctx.nav.setActive(page);ctx.nav.restore();if(previous!==page)ctx.content.scrollTop=ctx.state.pages[page]?.scrollTop||0;
   }
  };
+ window.SEVAGO_BAG_WEIGHING_INSPECT=()=>{const host=document.querySelector('.me-workspace');return host?mounted.get(host)?.weighing?.snapshot():null;};
  window.SEVAGO_BAG_INSPECT=()=>{const host=document.querySelector('.me-workspace');return host?mounted.get(host)?.bags?.snapshot():null;};
  window.SEVAGO_MODULE_DEFINITIONS=[...(window.SEVAGO_MODULE_DEFINITIONS||[]),definition];
 })();

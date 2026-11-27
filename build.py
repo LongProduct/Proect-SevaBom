@@ -34,7 +34,7 @@ grid_template=grid_template.replace('__CSS__',css.replace("url('assets/InterVari
 for key,url in assets.items():grid_template=grid_template.replace('src="'+key+'"','src="'+url+'"')
 js="const PRODUCT="+repr(assets['assets/29978-21861-1bd11.png'])+";\nconst AVATAR="+repr(assets['assets/29978-21861-11360.png'])+";\n"+(root/'src/grid.js').read_text()
 js+='\nconst SEVAGO_GRID_TEMPLATE='+json.dumps(grid_template)+';\n'+(root/'src/grid-host.js').read_text()+'\n';
-js+='\nconst SHELL_ASSETS='+json.dumps({p.stem:assets[str(p.relative_to(root))] for p in (root/'assets/launcher').glob('*.svg')})+';\n'+(root/'src/shared-header.js').read_text()+'\n'+(root/'src/shared-data-page.js').read_text()+'\n'+(root/'src/shared-sidebar.js').read_text()+'\n'+'\n'.join((root/p).read_text() for p in ['src/modules/bags-data.js','src/modules/bags-scope.js','src/modules/bags-export.js','src/modules/bags-page.js','src/modules/manufacturing-execution.js'])+'\n'+(root/'src/shell.js').read_text()
+js+='\nconst SHELL_ASSETS='+json.dumps({p.stem:assets[str(p.relative_to(root))] for p in (root/'assets/launcher').glob('*.svg')})+';\n'+(root/'src/shared-header.js').read_text()+'\n'+(root/'src/shared-data-page.js').read_text()+'\n'+(root/'src/shared-sidebar.js').read_text()+'\n'+'\n'.join((root/p).read_text() for p in ['src/modules/bags-data.js','src/modules/bags-scope.js','src/modules/bags-export.js','src/modules/bags-page.js','src/modules/bag-weighing-page.js','src/modules/manufacturing-execution.js'])+'\n'+(root/'src/shell.js').read_text()
 css=css.replace("url('assets/InterVariable.woff2')","url('"+assets['assets/InterVariable.woff2']+"')")
 html=html.replace('__CSS__',css).replace('__JS__',js)
 for key,url in assets.items():html=html.replace('src="'+key+'"','src="'+url+'"')

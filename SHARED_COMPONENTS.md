@@ -240,3 +240,41 @@ import module repositories, status lists, source records or Planned Order/Bag lo
 Default layout/style values come from the existing design system; no new token values
 or frameworks were introduced. Existing compatibility roots are not silently migrated
 through a new renderer. Use the regression matrix before changing public adapters.
+
+## Adaptive column sizing (default for all shared grid instances)
+
+No page opt-in is required. `config.columns[].width` remains the base/user width.
+The engine creates computed display widths in memory and uses them for colgroup,
+header/body geometry, sticky offsets, scroll navigation and drag/preview positioning.
+Data and business callbacks are unchanged. ResizeObserver handles real container size
+changes; resume/configuration changes recompute from the current container.
+
+Optional schema fields:
+
+| Field | Meaning |
+| --- | --- |
+| `flexGrow` | Nonnegative weight; extra space uses base width × weight |
+| `fixedWidth: true` | Never grow this column automatically |
+| `widthLocked: true` | Never grow this locked column automatically |
+| `minWidth` | Lower width bound; at least the existing 72px manual minimum |
+| `maxWidth` | Upper bound for computed growth and manual resizing |
+
+Text/reference/person/link/tag fields grow by default with weight 1; longtext uses 2.
+Number/status/date/media and other types use 0 unless explicitly configured.
+`config.columns[].widthCustomized` tracks manual resize/auto-fit (true) or reset
+(false). Missing legacy flags infer customization when width differs from the schema.
+This flag survives View save/load along with the base width. Computed values never do.
+
+Surplus first goes to growing, non-fixed, non-customized columns, respecting caps and
+redistributing unused shares. Remaining surplus uses `adaptiveWidth: {fallbackColumn:
+'fieldKey'}` passed to `createTable`; when absent/unavailable the last visible non-fixed
+business column is the default fallback. If it reaches its cap, remaining non-fixed
+columns are tried from right to left. A fallback can grow a customized width or a
+zero-weight type in display only, but cannot override fixed/locked/max constraints.
+If every column is fixed/capped there is no legal fill solution; configure an uncapped,
+non-fixed fallback to guarantee fill. Utility columns are never fallback candidates.
+
+Reset restores the schema base and growth eligibility. Drag resize starts from the
+actual rendered width, avoiding a jump on an expanded column. Width calculations never
+read record contents or change 36px row/leaf-header heights, 24px grouped band height,
+cell padding, typography, one-line ellipsis or floating expanded preview behavior.

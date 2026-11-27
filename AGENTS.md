@@ -62,3 +62,19 @@ Tests accept `SEVAGO_TEST_URL`. Use a free local port instead of stopping anothe
 Playwright test imports currently use the local development runtime; see docs for portability.
 Do not publish/deploy or send messages beyond user authorization. Existing GitHub Pages is
 served from `main` at repository root; pushing `main` changes the public prototype.
+
+## Adaptive width and density (global shared standard)
+
+All shared grids compute display widths to fill the actual container. Stored/configured
+widths remain base/user widths; never persist computed growth. Utility columns stay
+46px. Schema may set `flexGrow`, `fixedWidth`, `widthLocked`, `minWidth`, `maxWidth`;
+instance option `adaptiveWidth.fallbackColumn` selects the last-resort fill column.
+See SHARED_COMPONENTS.md for fallback and constraint behavior. Manual resize/auto-fit
+marks a user width; reset restores growth eligibility. Existing saved widths differing
+from schema defaults are treated as customized for backward compatibility.
+
+Data rows and body cells MUST render at 36px in every state, including empty/sparse
+sources, adaptive growth, resize, selection, hide/show and sidebar/window changes.
+No auto row height, wrapping, vertical stretching, density/token/padding changes or
+fake rows/columns. Keep existing leaf/group header dimensions and floating previews.
+Run `node tests/adaptive-width.cjs` plus the shared regression matrix after width work.

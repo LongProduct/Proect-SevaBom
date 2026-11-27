@@ -163,3 +163,27 @@ with the current artifact in seven states. Wait for font/image decoding, use the
 Chrome/viewport, and inspect any mismatch. Tiny corner raster differences are recorded
 explicitly (not hidden by a broad pixel tolerance). Do not recreate the old baseline
 from the refactored source. Results/report: `MASTER_LAYOUT_TEST_REPORT.html`.
+
+## Adaptive column width — Flexible Width, Fixed Height
+
+The shared engine computes horizontal display widths independently of records and
+stored widths. A real container ResizeObserver updates header/body, pinned offsets and
+grouped header measurements. Hidden columns do not consume width. Narrow containers
+retain base widths and scroll horizontally; wide containers distribute surplus by
+base width × flexGrow. STT/checkbox and Actions remain 46px, with Actions at the right
+edge when fill capacity exists. No layout wrappers, spacer columns or fake cells.
+
+User resize and auto-fit retain a separate customized flag. Reset removes that priority;
+computed growth is never saved to a View. Legacy widths differing from schema defaults
+are conservatively recognized as customized. Fallback may grow a customized column's
+display without changing its stored width. Hard fixed/locked widths and maxWidth win;
+if every visible column is fixed or capped, filling is mathematically impossible.
+Configure a non-fixed fallback with sufficient headroom for pages requiring full fill.
+
+Actual data row/body height stays exactly 36px, leaf headers 36px and optional grouped
+band 24px. Content remains one line with ellipsis; full content wraps only in the
+existing floating preview. Adaptive width never changes fonts, padding, badges,
+avatars, icons, row count, virtualization math or vertical density.
+
+Validation: `tests/adaptive-width.cjs` checks rendered dimensions, base-width isolation,
+resize/reset, overflow, hidden/fixed columns, sparse/empty data and grouped bands.
