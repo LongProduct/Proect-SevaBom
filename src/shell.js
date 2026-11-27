@@ -92,14 +92,14 @@ function activate(id,page='overview'){
  }
  active=id;document.body.dataset.activeModule=id;instance.state.page=page;
  if(id==='recruitment'){
-  original.workspace.hidden=false;$('.app-logo').classList.remove('sevago-module-logo');$('.app-logo').innerHTML=original.logo;$('.app-header>strong').textContent=original.title;
+  original.workspace.hidden=false;SEVAGO_SHARED_HEADER.configure({name:original.title,logoHTML:original.logo,legacy:true});
   window.SEVAGO_MODULE.resume();requestAnimationFrame(()=>{if(active===id)previous!==instance&&instance.scroll.forEach(([el,top,left])=>{el.scrollTop=top;el.scrollLeft=left;});});
  }else{
   if(!instance.host)instance.host=module.mount?module.mount({state:instance.state,data:instance.data,navigate}):mountPending(module,instance);
   if(!instance.host.isConnected)document.body.append(instance.host);
   instance.host.hidden=false;const content=instance.host.querySelector('.sm-content');if(content)content.scrollTop=instance.state.scroll||0;
-  $('.app-logo').classList.toggle('sevago-module-logo',module.iconSize!==44);$('.app-logo').innerHTML=`<img src="${module.icon}" width="${module.iconSize||60}" height="${module.iconSize||60}" alt="">`;
-  module.activate?.(instance.host,{page,state:instance.state,data:instance.data});$('.app-header>strong').textContent=module.name;
+  SEVAGO_SHARED_HEADER.configure({name:module.name,icon:module.icon,iconSize:module.iconSize||60});
+  module.activate?.(instance.host,{page,state:instance.state,data:instance.data});
  }
  $('#apps').setAttribute('aria-label','Ứng dụng SEVAGO');
  document.dispatchEvent(new CustomEvent('sevago:module-change',{detail:{id,page}}));

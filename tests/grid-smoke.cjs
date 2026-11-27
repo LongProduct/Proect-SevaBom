@@ -1,7 +1,7 @@
 const { chromium } = require('/Users/longho04157/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
 (async()=>{
 const browser=await chromium.launch({channel:'chrome',headless:true});const page=await browser.newPage({viewport:{width:1728,height:1117}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
-await page.goto('http://127.0.0.1:5173');await page.evaluate(()=>document.fonts.ready);await page.screenshot({path:'/tmp/sevago-advanced-desktop.png'});console.log('snapshot',await page.evaluate(()=>SEVAGO.snapshot()));
+await page.goto((process.env.SEVAGO_TEST_URL||'http://127.0.0.1:5173')+'');await page.evaluate(()=>document.fonts.ready);await page.screenshot({path:'/tmp/sevago-advanced-desktop.png'});console.log('snapshot',await page.evaluate(()=>SEVAGO.snapshot()));
 console.log('heights',await page.locator('.record-row').evaluateAll(xs=>[...new Set(xs.map(x=>x.getBoundingClientRect().height))]));
 console.log('head',await page.locator('#head-row').evaluate(e=>e.getBoundingClientRect().height));
 console.log('toolbar',await page.locator('.toolbar').evaluate(el=>({width:el.clientWidth,scroll:el.scrollWidth,children:[...el.children].map(c=>[c.id,Math.round(c.getBoundingClientRect().y),c.getBoundingClientRect().width])})));

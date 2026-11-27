@@ -1,0 +1,40 @@
+{
+  "at": "2026-11-27T01:29:19.009Z",
+  "results": [
+    {
+      "name": "legacy",
+      "status": "PASS",
+      "sha256": "7cdc5a39d44deffe2c28de1ce65cd96d1e4942e0d70cd364bca01b994d0797bb"
+    },
+    {
+      "name": "bags",
+      "status": "PASS",
+      "sha256": "893d5875e4464ef02ba18854bc72886f2018f139315b3a125c2c3ae4425b9782"
+    },
+    {
+      "name": "waiting",
+      "status": "PASS",
+      "sha256": "f5416ed361f947f85a858380b14dac241aedf4d57497e81dca55800b82cbacac"
+    },
+    {
+      "name": "running",
+      "status": "PASS",
+      "sha256": "2186f7176d98d45382da309172370fa79b2228e9f9f0ded4084ff018014909bb"
+    },
+    {
+      "name": "tablet",
+      "status": "PASS",
+      "sha256": "da962b8da1158e14fdf5833bc67aa2eee3a4d9ad12d5f42081419003343cb1d6"
+    },
+    {
+      "name": "launcher",
+      "status": "PASS",
+      "sha256": "de76c0220afc8cef503baa7756ae19bbdcb74f572aaec60e1fe8c25b57aa60e0"
+    },
+    {
+      "name": "pending",
+      "status": "PASS",
+      "sha256": "cc8ed5af4b5786a348b52339b575e2432bd11e1ef3ad334d498e1620d66562c1"
+    }
+  ]
+}

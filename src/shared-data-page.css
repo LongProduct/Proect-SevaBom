@@ -1,0 +1,27 @@
+/* SEVAGO Master Layout v1.0. Values extracted without visual changes. */
+.sevago-data-page{display:flex;flex-direction:column;min-height:0;height:100%}.sevago-data-page>h1{flex:none}.sevago-data-page>.sevago-data-panel{flex:1;min-height:0;display:flex;flex-direction:column;background:#fff}.sevago-data-page .sevago-primary-tabs{display:flex;max-width:100%;overflow:auto;flex-shrink:0;scrollbar-width:thin;border-radius:8px 8px 0 0;height:48px;min-height:48px}.sevago-data-page .sevago-primary-tabs>.tab{flex:none}
+.sevago-data-page .sevago-grid-slot{flex:1;min-height:0;display:flex;flex-direction:column}
+
+/* Reference: hug-width white status surface on the page background. */
+.sevago-data-page>.sevago-data-panel{background:transparent}
+.sevago-data-page .sevago-primary-tabs{width:max-content;max-width:100%;align-self:flex-start;flex:0 0 48px;gap:0;padding:0 24px 0 12px;background:#fff;border-radius:8px 8px 0 0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
+.sevago-data-page .sevago-primary-tabs::-webkit-scrollbar{display:none}
+.sevago-data-page .sevago-primary-tabs>.tab{height:48px;min-height:48px;padding:12px 16px;font:500 14px/20px Inter,Arial,sans-serif;flex:0 0 auto}
+.sevago-data-page .sevago-grid-slot{background:#fff}
+
+/* Shared second level: 32px buttons, symmetric 12px insets, 10px gap. */
+.sevago-data-page .sevago-secondary-tabs{width:100%;max-width:100%;align-self:stretch;box-shadow:inset 0 -1px 0 var(--border,#E5E7EB);display:flex;flex:0 0 56px;height:56px;min-height:56px;align-items:center;gap:10px;padding:12px;background:#fff;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
+.sevago-data-page .sevago-secondary-tabs[hidden]{display:none}
+.sevago-data-page .sevago-secondary-tabs::-webkit-scrollbar{display:none}
+.sevago-data-page .sevago-secondary-tabs>button{flex:0 0 auto;height:32px;box-sizing:border-box;padding:6px 12px;border:1px solid transparent;border-radius:6px;background:#fff;color:#4c4d4d;font:500 14px/18px Inter,Arial,sans-serif}
+.sevago-data-page .sevago-secondary-tabs>button:hover{background:#f3f7f6}
+.sevago-data-page .sevago-secondary-tabs>button.active{background:#f3f7f6;border-color:#053c35;color:#053c35}
+.sevago-data-page .sevago-secondary-tabs>button:focus-visible{outline:2px solid #316bff;outline-offset:-2px}
+
+.sevago-data-page .sevago-primary-tabs[hidden]{display:none}
+
+/* Optional header slot preserves the fixed header height and title truncation. */
+.app-header:has(>[data-sevago-header-slot]:not([hidden]))>strong{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.sevago-data-content{display:flex;flex-direction:column;overflow:hidden}
+.sevago-config-page{flex:1;min-height:0}

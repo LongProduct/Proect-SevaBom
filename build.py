@@ -23,7 +23,7 @@ html=f'''<!doctype html>
 </div></section></main></div>
 <div id="selection-toolbar" class="floating-selection" role="toolbar" aria-label="Thao tác bản ghi đã chọn" hidden><span id="selection-count"></span><button id="copy-codes" class="btn"><span data-icon="copy"></span>Copy mã</button><button id="planned-order" class="primary"><span data-icon="plus"></span>Tạo Planned Order</button><button id="clear-selection" aria-label="Bỏ chọn tất cả" title="Bỏ chọn tất cả"><span data-icon="close"></span></button></div>
 <dialog id="main-dialog" aria-label="Chi tiết thao tác"></dialog><div class="toast" id="toast" role="status" hidden></div><script>__JS__</script></body></html>'''
-css=(root/'backups/figma-v1/styles.css').read_text()+'\n'+(root/'src/grid.css').read_text()+'\n'+(root/'src/shell.css').read_text()+'\n'+(root/'src/modules/bags.css').read_text()
+css=(root/'backups/figma-v1/styles.css').read_text()+'\n'+(root/'src/grid.css').read_text()+'\n'+(root/'src/shell.css').read_text()+'\n'+(root/'src/shared-data-page.css').read_text()+'\n'+(root/'src/modules/bags.css').read_text()
 assets={}
 for p in (root/'assets').rglob('*'):
  if p.suffix in ['.svg','.png','.woff2']:
@@ -34,7 +34,7 @@ grid_template=grid_template.replace('__CSS__',css.replace("url('assets/InterVari
 for key,url in assets.items():grid_template=grid_template.replace('src="'+key+'"','src="'+url+'"')
 js="const PRODUCT="+repr(assets['assets/29978-21861-1bd11.png'])+";\nconst AVATAR="+repr(assets['assets/29978-21861-11360.png'])+";\n"+(root/'src/grid.js').read_text()
 js+='\nconst SEVAGO_GRID_TEMPLATE='+json.dumps(grid_template)+';\n'+(root/'src/grid-host.js').read_text()+'\n';
-js+='\nconst SHELL_ASSETS='+json.dumps({p.stem:assets[str(p.relative_to(root))] for p in (root/'assets/launcher').glob('*.svg')})+';\n'+(root/'src/shared-sidebar.js').read_text()+'\n'+'\n'.join((root/p).read_text() for p in ['src/modules/bags-data.js','src/modules/bags-scope.js','src/modules/bags-export.js','src/modules/bags-page.js','src/modules/manufacturing-execution.js'])+'\n'+(root/'src/shell.js').read_text()
+js+='\nconst SHELL_ASSETS='+json.dumps({p.stem:assets[str(p.relative_to(root))] for p in (root/'assets/launcher').glob('*.svg')})+';\n'+(root/'src/shared-header.js').read_text()+'\n'+(root/'src/shared-data-page.js').read_text()+'\n'+(root/'src/shared-sidebar.js').read_text()+'\n'+'\n'.join((root/p).read_text() for p in ['src/modules/bags-data.js','src/modules/bags-scope.js','src/modules/bags-export.js','src/modules/bags-page.js','src/modules/manufacturing-execution.js'])+'\n'+(root/'src/shell.js').read_text()
 css=css.replace("url('assets/InterVariable.woff2')","url('"+assets['assets/InterVariable.woff2']+"')")
 html=html.replace('__CSS__',css).replace('__JS__',js)
 for key,url in assets.items():html=html.replace('src="'+key+'"','src="'+url+'"')

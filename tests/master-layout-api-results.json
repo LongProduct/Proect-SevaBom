@@ -1,0 +1,42 @@
+{
+  "at": "2026-11-27T01:30:26.574Z",
+  "results": [
+    {
+      "name": "Master v1.0 component API exposes default toolbar order and optional tabs without empty space",
+      "status": "PASS"
+    },
+    {
+      "name": "Configuration creates independent table roots/data/default widths/order/pins/hidden columns",
+      "status": "PASS"
+    },
+    {
+      "name": "Default tool order/fixed search/header groups/feature flags reuse core DOM controls",
+      "status": "PASS"
+    },
+    {
+      "name": "Selection business actions receive only own rows, never range selection or legacy data",
+      "status": "PASS"
+    },
+    {
+      "name": "Search/filter/table configuration remain independent across root documents",
+      "status": "PASS"
+    },
+    {
+      "name": "Optional Header Slot uses same header DOM, retains 56px height and supports removal",
+      "status": "PASS"
+    },
+    {
+      "name": "Destroy cleans up composed group/selection observers, iframe roots and page DOM",
+      "status": "PASS"
+    },
+    {
+      "name": "New module and two pages are defined by configuration; route/sidebar/data/state remain independent",
+      "status": "PASS"
+    },
+    {
+      "name": "No JavaScript errors",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

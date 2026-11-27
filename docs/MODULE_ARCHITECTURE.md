@@ -79,3 +79,16 @@ Data pipeline: simulated access restriction → Applied Scope → status tab →
 The outer module's other seventeen Pages remain placeholders. The Bag page owns its DOM, demo data, applied scope and cached table controller; no other module's records or configuration are reused. Complete reload persistence is not added. Permissions remain a frontend demonstration.
 
 Regression before integration: original grid UI suite, business suite, module/state routing suite and drag/drop positioning checks passed after the adapter addition. Two independent synthetic instances verified state/data/DOM/keyboard isolation before the Bag Page was connected. Focused commands: `node tests/grid-adapter.cjs` and `node tests/bags-page.cjs`. The generated `.xlsx` was additionally validated with Python zipfile/XML parsing (one header plus sixty records).
+
+## SEVAGO Master Layout v1.0
+
+Các mô tả Page-owned Tabs/Toolbar/Grouped Header ở các giai đoạn trước được thay thế
+bởi shared composition trong `src/shared-data-page.js/.css`. Bag chỉ truyền cấu hình
+và callback nghiệp vụ. `src/shared-header.js` quản lý title/icon và Header Slot trên
+DOM Header hiện tại. Không thay đổi Grid Engine hoặc dữ liệu. Quy chuẩn hiện hành:
+`../AGENTS.md`, `../MASTER_LAYOUT.md`, `../SHARED_COMPONENTS.md`.
+
+Các Module mới có thể đăng ký `SEVAGO_UI.defineDataModule({id,name,icon,pages,...})`
+với Shared Sidebar và Page Container có sẵn. Page/Table được cache theo từng Module
+và Page; không reload hoặc chia sẻ dữ liệu. Module chưa triển khai tiếp tục là placeholder,
+không được trình bày như có nghiệp vụ thật.

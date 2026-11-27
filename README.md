@@ -2,6 +2,14 @@
 
 Bản tích hợp tính năng trên khung UI Figma hiện có: giữ header, sidebar xanh `#07554B`, font Inter, các tab, status bar và hành động tạo phiếu nhập. Grid được nâng lên hàng/header cố định **36px** theo đặc tả mới. Đã đọc file tham khảo `SEVAGO_Table_Pin_Fixed_Contextual_Selection.html`; không đưa các thao tác inline edit, paste ghi dữ liệu, xóa cell hay bulk edit của file đó vào bảng chỉ xem.
 
+## Tiêu chuẩn phát triển
+
+Dự án áp dụng **SEVAGO Master Layout v1.0**. Trước khi bổ sung Module/Page, đọc
+[AGENTS.md](AGENTS.md), [MASTER_LAYOUT.md](MASTER_LAYOUT.md) và
+[SHARED_COMPONENTS.md](SHARED_COMPONENTS.md). Module mới có thể dùng
+`SEVAGO_UI.defineDataModule`; Page có lifecycle riêng dùng `createDataPage` và
+`createTable`. Engine, dữ liệu và các tương tác cũ được bảo toàn.
+
 ## Phiên bản hiện tại
 
 Prototype SEVAGO gồm App Launcher dạng drawer, routing theo module và Shared Advanced Data Table với state độc lập. Module **Thực thi sản xuất → Danh sách bag** có 60 Bag demo, 56 trường dữ liệu (58 cột kể cả STT/Actions), Production Scope 4 cấp và Status Tabs hai tầng.
